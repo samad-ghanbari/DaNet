@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>font/tahoma.ttf</file>
+        <file>font/tahomabd.ttf</file>
+    </qresource>
+</RCC>

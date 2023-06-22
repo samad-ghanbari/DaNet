@@ -1,0 +1,97 @@
+sysname deviceExchangeParam-switchParam-01
+#
+
+ip vpn-instance VPN-NGN_nms
+    route-distinguisher 65021:300011
+    vpn-target 65021:3000112 export-extcommunity
+    vpn-target 65021:3000111 import-extcommunity
+
+ip vpn-instance VPN-NGN_signaling
+    route-distinguisher 65021:300012
+    vpn-target 65021:3000122 export-extcommunity
+    vpn-target 65021:3000121 import-extcommunity
+
+ip vpn-instance VPN-NGN_media
+    route-distinguisher 65021:300014
+    vpn-target 65021:3000140 export-extcommunity
+    vpn-target 65021:3000140 import-extcommunity
+ 
+ip vpn-instance MPLS-VPN_voip
+    route-distinguisher 65021:300015
+    vpn-target 65021:3000151 65021:3000152 export-extcommunity
+    vpn-target 65021:3000151 65021:3000152 import-extcommunity
+#
+
+interface gigabitEthernetParam interfaceParam
+    description TO-[exchangeParam-Access-S9306-SWNo-remoteInterfaceParam]
+    undo shutdown
+    eth-trunk ethParam
+#
+
+interface Eth-Trunk ethParam.4031
+    description TO-[exchangeParam-S9306-SWNo-Access-remoteInterfaceParam-MPLS-VPN_nms]
+    ip address nmsIpParam 255.255.255.252
+    vlan-type dot1q 4031
+    ip binding vpn-instance VPN-NGN_nms
+#
+
+interface Eth-Trunk ethParam.4032
+    description TO-[exchangeParam-S9306-SWNo-Access-remoteInterfaceParam-MPLS-VPN_signaling]
+    ip address sigIpParam 255.255.255.252
+    vlan-type dot1q 4032
+    ip binding vpn-instance VPN-NGN_signaling
+#
+
+interface Eth-Trunk ethParam.4034
+    description TO-[exchangeParam-S9306-SWNo-Access-remoteInterfaceParam-MPLS-VPN_media]
+    ip address mediaIpParam 255.255.255.252
+    vlan-type dot1q 4034 
+    ip binding vpn-instance VPN-NGN_media	
+#
+
+interface Eth-Trunk ethParam.4035
+    description TO-[exchangeParam-S9306-SWNo-Access-remoteInterfaceParam-MPLS-VPN_voip]
+    ip address voipIpParam 255.255.255.252
+    vlan-type dot1q 4035 
+    ip binding vpn-instance MPLS-VPN_voip
+#
+Bgp 65021 
+# 
+  ipv4-family vpn-instance VPN-NGN_nms
+  import-route direct
+  import-route OSPF nmsOspfIdParam
+ 
+  ipv4-family vpn-instance VPN-NGN_signaling
+  import-route direct
+  import-route OSPF sigOspfIdParam 
+
+  ipv4-family vpn-instance VPN-NGN_media
+  import-route direct
+  import-route OSPF mediaOspfIdParam 
+  
+  ipv4-family vpn-instance MPLS-VPN_voip
+  import-route direct
+  import-route OSPF voipOspfIdParam 
+#
+  Ospf nmsOspfIdParam vpn-instance VPN-NGN_nms
+  area 0.0.0.1
+  network nmsNetParam  0.0.0.3
+  stub no-summary
+
+  Ospf sigOspfIdParam  vpn-instance VPN-NGN_signaling
+  area 0.0.0.1
+  network sigNetParam  0.0.0.3
+  stub no-summary
+
+  Ospf mediaOspfIdParam vpn-instance VPN-NGN_media
+  area 0.0.0.1
+  network mediaNetParam  0.0.0.3
+  stub no-summary
+  
+  Ospf voipOspfIdParam vpn-instance MPLS-VPN_voip
+  area 0.0.0.1
+  network voipNetParam  0.0.0.3
+  stub no-summary
+  
+#
+         
