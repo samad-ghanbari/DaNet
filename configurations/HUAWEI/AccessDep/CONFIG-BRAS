@@ -1,0 +1,81 @@
+sysname brasExchParam-deviceParam-01
+#
+interface Eth-Trunk EthAgg1Param.hsiVlan
+    pppoe-server bind Virtual-Template 1
+    description TO-[exchParam-switchParamAgg1-01-PPPoE-VLANhsiVlan-ACCESS-S9306]
+    user-vlan 50  149 qinq hsiVlan
+    user-vlan 350 449 qinq hsiVlan
+    user-vlan 800 899 qinq hsiVlan
+    bas
+ #
+    access-type layer2-subscriber default-domain authentication tctAreaNoParam
+    permit-domain tctAreaNoParam stctAreaNoParam
+    client-option82
+    access-delay 200 even-mac
+ #
+interface Eth-Trunk EthAgg1Param.sinetVlan
+    pppoe-server bind Virtual-Template 1
+    description TO-[exchParam-switchParamAgg1-01-PPPoE-VLANsinetVlan-ACCESS-S9306]
+    user-vlan 250 349 qinq sinetVlan
+    user-vlan 550 649 qinq sinetVlan
+    user-vlan 900 999 qinq sinetVlan
+    bas
+ #
+    access-type layer2-subscriber default-domain authentication sinetAreaNoParam
+    permit-domain sinetAreaNoParam
+    client-option82
+    access-delay 200 even-mac
+ #
+interface Eth-Trunk EthAgg1Param.voipVlan
+    pppoe-server bind Virtual-Template 1
+    description TO-[exchParam-switchParamAgg1-01-PPPoE-VLANvoipVlan-ACCESS-S9306]
+    user-vlan 150 249 qinq voipVlan
+    user-vlan 450 549 qinq voipVlan
+    user-vlan 700 799 qinq voipVlan
+    bas
+ #
+    access-type layer2-subscriber default-domain authentication voipAreaNoParam
+    permit-domain voipAreaNoParam
+    client-option82
+    access-delay 200 even-mac
+ #
+interface Eth-Trunk  EthAgg2Param.hsiVlan
+    pppoe-server bind Virtual-Template 1
+    description TO-[exchParam-switchParamAgg2-01-PPPoE-VLANhsiVlan-ACCESS-S9306]
+    user-vlan 50  149 qinq hsiVlan
+    user-vlan 350 449 qinq hsiVlan
+    user-vlan 800 899 qinq hsiVlan
+    bas
+ #
+    access-type layer2-subscriber default-domain authentication tctAreaNoParam
+    permit-domain tctAreaNoParam stctAreaNoParam
+    client-option82
+    access-delay 200 even-mac
+ #
+interface Eth-Trunk EthAgg2Param.sinetVlan
+    pppoe-server bind Virtual-Template 1
+    description TO-[exchParam-switchParamAgg2-01-PPPoE-VLANsinetVlan-ACCESS-S9306]
+    user-vlan 250 349 qinq sinetVlan
+    user-vlan 550 649 qinq sinetVlan
+    user-vlan 900 999 qinq sinetVlan
+    bas
+ #
+    access-type layer2-subscriber default-domain authentication sinetAreaNoParam
+    permit-domain sinetAreaNoParam
+    client-option82
+    access-delay 200 even-mac
+ #
+interface Eth-Trunk EthAgg2Param.voipVlan
+    pppoe-server bind Virtual-Template 1
+    description TO-[exchParam-switchParamAgg2-01-PPPoE-VLANvoipVlan-ACCESS-S9306]
+    user-vlan 150 249 qinq voipVlan
+    user-vlan 450 549 qinq voipVlan
+    user-vlan 700 799 qinq voipVlan
+    bas
+ #
+    access-type layer2-subscriber default-domain authentication voipAreaNoParam
+    permit-domain voipAreaNoParam
+    client-option82
+    access-delay 200 even-mac
+ #
+

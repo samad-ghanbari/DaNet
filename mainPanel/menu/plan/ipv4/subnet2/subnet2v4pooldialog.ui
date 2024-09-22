@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Subnet2V4PoolDialog</class>
+ <widget class="QDialog" name="Subnet2V4PoolDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>701</width>
+    <height>502</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Tahoma</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>IPv4 Subnet Pool 2</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../../../image.qrc">
+    <normaloff>:/Image/network.png</normaloff>:/Image/network.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="pix">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Tahoma</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../../../../../image.qrc">:/Image/subnet.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="netLbl">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>400</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>8000</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Tahoma</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(85, 0, 127);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="descLbl">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>500</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>8000</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Tahoma</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 127);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QPushButton" name="addSubnetBtn">
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Tahoma</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../../../image.qrc">
+           <normaloff>:/Image/add.png</normaloff>:/Image/add.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="RemoveSubnetBtn">
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Tahoma</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../../../../../image.qrc">
+           <normaloff>:/Image/remove.png</normaloff>:/Image/remove.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableView" name="ipTV">
+     <property name="font">
+      <font>
+       <family>Tahoma</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <action name="actionNetwork_Assignment">
+   <property name="icon">
+    <iconset resource="../../../../../image.qrc">
+     <normaloff>:/Image/connection.png</normaloff>:/Image/connection.png</iconset>
+   </property>
+   <property name="text">
+    <string>Assign Network</string>
+   </property>
+   <property name="toolTip">
+    <string>network Assignment</string>
+   </property>
+  </action>
+  <action name="actionNetwork_Release">
+   <property name="icon">
+    <iconset resource="../../../../../image.qrc">
+     <normaloff>:/Image/disconnection.png</normaloff>:/Image/disconnection.png</iconset>
+   </property>
+   <property name="text">
+    <string>Release Network</string>
+   </property>
+   <property name="toolTip">
+    <string>Network Release</string>
+   </property>
+  </action>
+  <action name="actionSplitNetwork">
+   <property name="icon">
+    <iconset resource="../../../../../image.qrc">
+     <normaloff>:/Image/split.png</normaloff>:/Image/split.png</iconset>
+   </property>
+   <property name="text">
+    <string>Split Network</string>
+   </property>
+   <property name="toolTip">
+    <string>Split Network</string>
+   </property>
+  </action>
+  <action name="actionMergenets">
+   <property name="icon">
+    <iconset resource="../../../../../image.qrc">
+     <normaloff>:/Image/merge.png</normaloff>:/Image/merge.png</iconset>
+   </property>
+   <property name="text">
+    <string>Merge Networks</string>
+   </property>
+   <property name="toolTip">
+    <string>Merge Networks</string>
+   </property>
+  </action>
+  <action name="actionView_Ip_Pool">
+   <property name="icon">
+    <iconset resource="../../../../../image.qrc">
+     <normaloff>:/Image/ip.png</normaloff>:/Image/ip.png</iconset>
+   </property>
+   <property name="text">
+    <string>View Ip Pool</string>
+   </property>
+  </action>
+  <action name="actionExport_PDF">
+   <property name="icon">
+    <iconset resource="../../../../../image.qrc">
+     <normaloff>:/Image/pdf.png</normaloff>:/Image/pdf.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export PDF</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="icon">
+    <iconset resource="../../../../../image.qrc">
+     <normaloff>:/Image/refresh.png</normaloff>:/Image/refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+   <property name="toolTip">
+    <string>Refresh</string>
+   </property>
+  </action>
+  <action name="actionView_Subnet_Pool">
+   <property name="icon">
+    <iconset resource="../../../../../image.qrc">
+     <normaloff>:/Image/subnet.png</normaloff>:/Image/subnet.png</iconset>
+   </property>
+   <property name="text">
+    <string>View Subnet Pool</string>
+   </property>
+   <property name="toolTip">
+    <string>View Subnet Pool</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>addSubnetBtn</tabstop>
+  <tabstop>RemoveSubnetBtn</tabstop>
+  <tabstop>ipTV</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../../../../image.qrc"/>
+ </resources>
+ <connections/>
+</ui>

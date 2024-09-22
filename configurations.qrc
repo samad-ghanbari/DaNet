@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>configurations/HUAWEI/AccessDep/CONFIG-CX600</file>
+        <file>configurations/HUAWEI/AccessDep/CONFIG-BRAS</file>
+        <file>configurations/HUAWEI/AccessDep/CONFIG-Agg</file>
+        <file>configurations/HUAWEI/SwitchDep/SBC-IP-LB</file>
+    </qresource>
+</RCC>

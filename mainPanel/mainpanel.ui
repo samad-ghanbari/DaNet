@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainPanel</class>
+ <widget class="QMainWindow" name="MainPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Tahoma</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Data Network Planning</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../image.qrc">
+    <normaloff>:/Image/danetIcon.png</normaloff>:/Image/danetIcon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QTableView" name="portTV">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Tahoma</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="autoScroll">
+       <bool>false</bool>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="verticalScrollMode">
+       <enum>QAbstractItemView::ScrollPerItem</enum>
+      </property>
+      <property name="horizontalScrollMode">
+       <enum>QAbstractItemView::ScrollPerItem</enum>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Tahoma</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="font">
+    <font>
+     <family>Tahoma</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </widget>
+  <action name="actionAdminUsers">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/admin.png</normaloff>:/Image/admin.png</iconset>
+   </property>
+   <property name="text">
+    <string>Users</string>
+   </property>
+  </action>
+  <action name="actionAdminDevices">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/device.png</normaloff>:/Image/device.png</iconset>
+   </property>
+   <property name="text">
+    <string>Devices</string>
+   </property>
+  </action>
+  <action name="actionAdminCards">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/card.png</normaloff>:/Image/card.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cards</string>
+   </property>
+  </action>
+  <action name="actionExchSiteMan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/exch.png</normaloff>:/Image/exch.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exchanges/Sites</string>
+   </property>
+   <property name="toolTip">
+    <string>Exchange/Site Management</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionOdfMan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/fiber.png</normaloff>:/Image/fiber.png</iconset>
+   </property>
+   <property name="text">
+    <string>ODF/POS</string>
+   </property>
+   <property name="toolTip">
+    <string>ODF/POS Installation</string>
+   </property>
+  </action>
+  <action name="actionDeviceInstall">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/device.png</normaloff>:/Image/device.png</iconset>
+   </property>
+   <property name="text">
+    <string>Device</string>
+   </property>
+   <property name="toolTip">
+    <string>Device Installation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionAssignInterface">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/connection.png</normaloff>:/Image/connection.png</iconset>
+   </property>
+   <property name="text">
+    <string>Assign Interface</string>
+   </property>
+   <property name="toolTip">
+    <string>Interface Assignment</string>
+   </property>
+  </action>
+  <action name="actionEmptyInterface">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/disconnection.png</normaloff>:/Image/disconnection.png</iconset>
+   </property>
+   <property name="text">
+    <string>Empty Interface</string>
+   </property>
+   <property name="toolTip">
+    <string>Empty Interface</string>
+   </property>
+  </action>
+  <action name="actionModifyInterface">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/edit.png</normaloff>:/Image/edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Modify Interface</string>
+   </property>
+  </action>
+  <action name="actionViewODFPosition">
+   <property name="icon">
+    <iconset theme="ODFPosition" resource="../image.qrc">
+     <normaloff>:/Image/fiber.png</normaloff>:/Image/fiber.png</iconset>
+   </property>
+   <property name="text">
+    <string>View ODF Position</string>
+   </property>
+   <property name="toolTip">
+    <string>View ODF Position</string>
+   </property>
+  </action>
+  <action name="actionLocalDevice">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/device.png</normaloff>:/Image/device.png</iconset>
+   </property>
+   <property name="text">
+    <string>Local Device</string>
+   </property>
+   <property name="toolTip">
+    <string>Local Device</string>
+   </property>
+  </action>
+  <action name="actionManageDevice">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/device.png</normaloff>:/Image/device.png</iconset>
+   </property>
+   <property name="text">
+    <string>Device Management</string>
+   </property>
+   <property name="toolTip">
+    <string>Device Management</string>
+   </property>
+  </action>
+  <action name="actionManageODF">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/fiber.png</normaloff>:/Image/fiber.png</iconset>
+   </property>
+   <property name="text">
+    <string>ODF Management</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/refresh.png</normaloff>:/Image/refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+   <property name="toolTip">
+    <string>Resresh Table</string>
+   </property>
+  </action>
+  <action name="actionIPv4Plan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/ip.png</normaloff>:/Image/ip.png</iconset>
+   </property>
+   <property name="text">
+    <string>IPv4 Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>IPv4 Plan</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionDSLAMPlan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/dslam.png</normaloff>:/Image/dslam.png</iconset>
+   </property>
+   <property name="text">
+    <string>DSLAM Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>DSLAM Plan</string>
+   </property>
+  </action>
+  <action name="actionAccessDepSingleSwitchPlan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/switch.png</normaloff>:/Image/switch.png</iconset>
+   </property>
+   <property name="text">
+    <string>Access Single Switch Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>Access Single Switch Plan</string>
+   </property>
+  </action>
+  <action name="actionAccessDepDoubleSwitchPlan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/switch2.png</normaloff>:/Image/switch2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Access Double Switch Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>Access Double Switch Plan</string>
+   </property>
+  </action>
+  <action name="actionSBCIPLoopBackPlan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/sbc.png</normaloff>:/Image/sbc.png</iconset>
+   </property>
+   <property name="text">
+    <string>SBC IP LoopBack Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>SBC IP LoopBack Plan</string>
+   </property>
+  </action>
+  <action name="actionPurchase_Management">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/purchase.png</normaloff>:/Image/purchase.png</iconset>
+   </property>
+   <property name="text">
+    <string>Purchases</string>
+   </property>
+  </action>
+  <action name="actionConnection">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/link.png</normaloff>:/Image/link.png</iconset>
+   </property>
+   <property name="text">
+    <string>Connection</string>
+   </property>
+   <property name="toolTip">
+    <string>Connections</string>
+   </property>
+  </action>
+  <action name="actionSFP_Modules">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/sfp.png</normaloff>:/Image/sfp.png</iconset>
+   </property>
+   <property name="text">
+    <string>Module Types</string>
+   </property>
+   <property name="toolTip">
+    <string>SFP</string>
+   </property>
+  </action>
+  <action name="actionBRAS_NAS_IP">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/nas.png</normaloff>:/Image/nas.png</iconset>
+   </property>
+   <property name="text">
+    <string>BRAS NAS IP</string>
+   </property>
+   <property name="toolTip">
+    <string>BRAS NAS IP</string>
+   </property>
+  </action>
+  <action name="actionInstallCard">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/card.png</normaloff>:/Image/card.png</iconset>
+   </property>
+   <property name="text">
+    <string>Card</string>
+   </property>
+   <property name="toolTip">
+    <string>Device Card Installation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionChange_Module">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/sfp.png</normaloff>:/Image/sfp.png</iconset>
+   </property>
+   <property name="text">
+    <string>Change Module</string>
+   </property>
+   <property name="toolTip">
+    <string>Change Module</string>
+   </property>
+  </action>
+  <action name="actionExchange_Info">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/exch.png</normaloff>:/Image/exch.png</iconset>
+   </property>
+   <property name="text">
+    <string>Local Exchange Info</string>
+   </property>
+   <property name="toolTip">
+    <string>Exchange Information</string>
+   </property>
+  </action>
+  <action name="actionReportExchange_Devices">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/exch.png</normaloff>:/Image/exch.png</iconset>
+   </property>
+   <property name="text">
+    <string>Device</string>
+   </property>
+   <property name="toolTip">
+    <string>Report Exchange Devices</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+D</string>
+   </property>
+  </action>
+  <action name="actionReportFloorPlan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/floorplan.png</normaloff>:/Image/floorplan.png</iconset>
+   </property>
+   <property name="text">
+    <string>Floor Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>Report Floor Plan</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F</string>
+   </property>
+  </action>
+  <action name="actionReportExchange_Sites">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/exch.png</normaloff>:/Image/exch.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sites</string>
+   </property>
+   <property name="toolTip">
+    <string>Report Exchange Sites</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+S</string>
+   </property>
+  </action>
+  <action name="actionReportInterfaces">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/interface.png</normaloff>:/Image/interface.png</iconset>
+   </property>
+   <property name="text">
+    <string>Interfaces</string>
+   </property>
+   <property name="toolTip">
+    <string>Report Interfaces</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+I</string>
+   </property>
+  </action>
+  <action name="actionReportODF">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/fiber.png</normaloff>:/Image/fiber.png</iconset>
+   </property>
+   <property name="text">
+    <string>ODF</string>
+   </property>
+   <property name="toolTip">
+    <string>Report ODF</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+O</string>
+   </property>
+  </action>
+  <action name="actionReportNetwork_Pool">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/network.png</normaloff>:/Image/network.png</iconset>
+   </property>
+   <property name="text">
+    <string>Network Pool</string>
+   </property>
+   <property name="toolTip">
+    <string>Report Network Pool</string>
+   </property>
+  </action>
+  <action name="actionReportIP_Pool">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/ip.png</normaloff>:/Image/ip.png</iconset>
+   </property>
+   <property name="text">
+    <string>IP Pool</string>
+   </property>
+   <property name="toolTip">
+    <string>Report IP Pool</string>
+   </property>
+  </action>
+  <action name="actionReportDSLAM">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/dslam.png</normaloff>:/Image/dslam.png</iconset>
+   </property>
+   <property name="text">
+    <string>DSLAM</string>
+   </property>
+   <property name="toolTip">
+    <string>Report DSLAM </string>
+   </property>
+  </action>
+  <action name="actionNetwork_Calculator">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/calculator.png</normaloff>:/Image/calculator.png</iconset>
+   </property>
+   <property name="text">
+    <string>Network Calculator</string>
+   </property>
+   <property name="toolTip">
+    <string>Network Calculator</string>
+   </property>
+  </action>
+  <action name="actionNetwork_Assistant">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/assistant.png</normaloff>:/Image/assistant.png</iconset>
+   </property>
+   <property name="text">
+    <string>Network Assistant</string>
+   </property>
+   <property name="toolTip">
+    <string>Network Assistant</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_Analyser">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/analyze.png</normaloff>:/Image/analyze.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configuration Analyser</string>
+   </property>
+   <property name="toolTip">
+    <string>Configuration Analyser</string>
+   </property>
+  </action>
+  <action name="actionIP_Pool_Analyser">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/analyze.png</normaloff>:/Image/analyze.png</iconset>
+   </property>
+   <property name="text">
+    <string>IP Pool Analyser</string>
+   </property>
+   <property name="toolTip">
+    <string>IP Pool Analyser</string>
+   </property>
+  </action>
+  <action name="actionRecent_LOG">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/log.png</normaloff>:/Image/log.png</iconset>
+   </property>
+   <property name="text">
+    <string>Recent LOG</string>
+   </property>
+   <property name="toolTip">
+    <string>Recent LOG</string>
+   </property>
+  </action>
+  <action name="actionAbout_DaNet">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/help.png</normaloff>:/Image/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>About DaNet</string>
+   </property>
+   <property name="toolTip">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionRecommendation">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/recommendation.png</normaloff>:/Image/recommendation.png</iconset>
+   </property>
+   <property name="text">
+    <string>Recommendation</string>
+   </property>
+   <property name="toolTip">
+    <string>Recommendation</string>
+   </property>
+  </action>
+  <action name="actionProfile">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/profile.png</normaloff>:/Image/profile.png</iconset>
+   </property>
+   <property name="text">
+    <string>Profile</string>
+   </property>
+   <property name="toolTip">
+    <string>Profile</string>
+   </property>
+  </action>
+  <action name="actionExport_PDF">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/pdf.png</normaloff>:/Image/pdf.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export PDF  &lt;Shft+P&gt;</string>
+   </property>
+   <property name="toolTip">
+    <string>Export PDF</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+P</string>
+   </property>
+  </action>
+  <action name="actionReserve_To_Commercial_Dep">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/commercial.png</normaloff>:/Image/commercial.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reserve To Commercial Dep.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionView_Recommendations">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/recommendation.png</normaloff>:/Image/recommendation.png</iconset>
+   </property>
+   <property name="text">
+    <string>View Recommendations</string>
+   </property>
+   <property name="toolTip">
+    <string>View Recommendations</string>
+   </property>
+  </action>
+  <action name="actionCommercial_Reserved_Interfaces">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/commercial.png</normaloff>:/Image/commercial.png</iconset>
+   </property>
+   <property name="text">
+    <string>Commercial Reserved Interfaces</string>
+   </property>
+   <property name="toolTip">
+    <string>Commercial Reserved Interfaces</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+R</string>
+   </property>
+  </action>
+  <action name="actionClear_LOG">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/log.png</normaloff>:/Image/log.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear LOG</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear LOG</string>
+   </property>
+  </action>
+  <action name="actionLom">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/list.png</normaloff>:/Image/list.png</iconset>
+   </property>
+   <property name="text">
+    <string>LOM</string>
+   </property>
+   <property name="toolTip">
+    <string>LOM</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+L</string>
+   </property>
+  </action>
+  <action name="actionIPv6_Plan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/ip.png</normaloff>:/Image/ip.png</iconset>
+   </property>
+   <property name="text">
+    <string>IPv6 Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>IPv6 Plan</string>
+   </property>
+  </action>
+  <action name="actionReportSubnet_Pool">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/subnet.png</normaloff>:/Image/subnet.png</iconset>
+   </property>
+   <property name="text">
+    <string>Subnet Pool</string>
+   </property>
+   <property name="toolTip">
+    <string>Subnet Pool</string>
+   </property>
+  </action>
+  <action name="actionVLAN_Reference">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/reserve.png</normaloff>:/Image/reserve.png</iconset>
+   </property>
+   <property name="text">
+    <string>VLAN Reference</string>
+   </property>
+   <property name="toolTip">
+    <string>VLAN Reference</string>
+   </property>
+  </action>
+  <action name="actionRD_Reference">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/reserve.png</normaloff>:/Image/reserve.png</iconset>
+   </property>
+   <property name="text">
+    <string>RD Reference</string>
+   </property>
+   <property name="toolTip">
+    <string>RD Reference</string>
+   </property>
+  </action>
+  <action name="actionPVC_Reference">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/reserve.png</normaloff>:/Image/reserve.png</iconset>
+   </property>
+   <property name="text">
+    <string>PVC Reference</string>
+   </property>
+   <property name="toolTip">
+    <string>PVC Reference</string>
+   </property>
+  </action>
+  <action name="actionVSI_Reference">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/reserve.png</normaloff>:/Image/reserve.png</iconset>
+   </property>
+   <property name="text">
+    <string>VSI Reference</string>
+   </property>
+   <property name="toolTip">
+    <string>VSI Reference</string>
+   </property>
+  </action>
+  <action name="actionExchanges_Sites_stat">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/exch.png</normaloff>:/Image/exch.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exchanges/Sites</string>
+   </property>
+   <property name="toolTip">
+    <string>Exchanges/Sites</string>
+   </property>
+  </action>
+  <action name="actionDeviceCount">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/device.png</normaloff>:/Image/device.png</iconset>
+   </property>
+   <property name="text">
+    <string>Device Count</string>
+   </property>
+   <property name="toolTip">
+    <string>Devices</string>
+   </property>
+  </action>
+  <action name="actionPortsStat">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/interface.png</normaloff>:/Image/interface.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ports</string>
+   </property>
+   <property name="toolTip">
+    <string>Ports</string>
+   </property>
+  </action>
+  <action name="actionCardsStat">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/card.png</normaloff>:/Image/card.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cards</string>
+   </property>
+   <property name="toolTip">
+    <string>Cards Statistics</string>
+   </property>
+  </action>
+  <action name="actionReportTotal_DSLAM_Plan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/dslam.png</normaloff>:/Image/dslam.png</iconset>
+   </property>
+   <property name="text">
+    <string>Total DSLAM Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>Report Total DSLAM Plan</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+T</string>
+   </property>
+  </action>
+  <action name="actionNew_SitePlan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/newSite.png</normaloff>:/Image/newSite.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Site DSLAM Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>New Site</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionLocal_New_DSLAM_Plan">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/newDslam.png</normaloff>:/Image/newDslam.png</iconset>
+   </property>
+   <property name="text">
+    <string>Local New DSLAM Plan</string>
+   </property>
+   <property name="toolTip">
+    <string>New Local DSLAM Plan</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionDevices_Status">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/device.png</normaloff>:/Image/device.png</iconset>
+   </property>
+   <property name="text">
+    <string>Devices Status</string>
+   </property>
+   <property name="toolTip">
+    <string>Devices Status</string>
+   </property>
+  </action>
+  <action name="actionChange_ODF">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/change.png</normaloff>:/Image/change.png</iconset>
+   </property>
+   <property name="text">
+    <string>Change ODF</string>
+   </property>
+   <property name="toolTip">
+    <string>Change ODF Position</string>
+   </property>
+  </action>
+  <action name="actionExport_Excel">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/excel.png</normaloff>:/Image/excel.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export Excel</string>
+   </property>
+   <property name="toolTip">
+    <string>Export Excel</string>
+   </property>
+  </action>
+  <action name="actionSaloon">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/saloon.png</normaloff>:/Image/saloon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Saloons</string>
+   </property>
+   <property name="toolTip">
+    <string>Saloon Management</string>
+   </property>
+  </action>
+  <action name="actionToolsModule_Analyser">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/sfp.png</normaloff>:/Image/sfp.png</iconset>
+   </property>
+   <property name="text">
+    <string>Module Analyser</string>
+   </property>
+  </action>
+  <action name="actionInterface_Type">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/interface.png</normaloff>:/Image/interface.png</iconset>
+   </property>
+   <property name="text">
+    <string>Interface Types</string>
+   </property>
+   <property name="toolTip">
+    <string>Interface Types</string>
+   </property>
+  </action>
+  <action name="actionChange_Interface_Type">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/interface.png</normaloff>:/Image/interface.png</iconset>
+   </property>
+   <property name="text">
+    <string>Change Interface Type</string>
+   </property>
+   <property name="toolTip">
+    <string>Change Interface Type</string>
+   </property>
+  </action>
+  <action name="actionReservePortToCommercialDep">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/commercial.png</normaloff>:/Image/commercial.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reserve To Commercial Dep.</string>
+   </property>
+   <property name="toolTip">
+    <string>Reserve To Commercial Dep.</string>
+   </property>
+  </action>
+  <action name="actionRegex_Help">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/regex.png</normaloff>:/Image/regex.png</iconset>
+   </property>
+   <property name="text">
+    <string>Regex Help</string>
+   </property>
+   <property name="toolTip">
+    <string>Regex Help</string>
+   </property>
+  </action>
+  <action name="actionRemove_DSLAM">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/removeDslam.png</normaloff>:/Image/removeDslam.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove DSLAM</string>
+   </property>
+  </action>
+  <action name="actionAccessBRASConfig">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/config.png</normaloff>:/Image/config.png</iconset>
+   </property>
+   <property name="text">
+    <string>Access BRAS Config</string>
+   </property>
+   <property name="toolTip">
+    <string>Access BRAS Configuration</string>
+   </property>
+  </action>
+  <action name="actionCommodity">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/comm1.png</normaloff>:/Image/comm1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Commodities</string>
+   </property>
+  </action>
+  <action name="actionLetters">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/letters.png</normaloff>:/Image/letters.png</iconset>
+   </property>
+   <property name="text">
+    <string>Letters</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="actionPhone_Numbers">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/phone.png</normaloff>:/Image/phone.png</iconset>
+   </property>
+   <property name="text">
+    <string>Contacts</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actionUninstalled_Commodities">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/removeDslam.png</normaloff>:/Image/removeDslam.png</iconset>
+   </property>
+   <property name="text">
+    <string>Uninstalled Commodities</string>
+   </property>
+  </action>
+  <action name="actionAssign_ODF">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/link.png</normaloff>:/Image/link.png</iconset>
+   </property>
+   <property name="text">
+    <string>Link to ODF</string>
+   </property>
+   <property name="toolTip">
+    <string>Assign ODF</string>
+   </property>
+  </action>
+  <action name="actionDetach_ODF">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/unlink.png</normaloff>:/Image/unlink.png</iconset>
+   </property>
+   <property name="text">
+    <string>Unlink ODF</string>
+   </property>
+   <property name="toolTip">
+    <string>Detach ODF</string>
+   </property>
+  </action>
+  <action name="actionLink_Batch_to_ODF">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/link.png</normaloff>:/Image/link.png</iconset>
+   </property>
+   <property name="text">
+    <string>Link to ODF</string>
+   </property>
+   <property name="toolTip">
+    <string>Link to ODF</string>
+   </property>
+  </action>
+  <action name="actionUnlik_Batch_ODF">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/unlink.png</normaloff>:/Image/unlink.png</iconset>
+   </property>
+   <property name="text">
+    <string>Unlik ODF</string>
+   </property>
+  </action>
+  <action name="actionSystemNo">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/systemNo.png</normaloff>:/Image/systemNo.png</iconset>
+   </property>
+   <property name="text">
+    <string>SystemNo</string>
+   </property>
+   <property name="toolTip">
+    <string>System No</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../image.qrc"/>
+ </resources>
+ <connections/>
+</ui>

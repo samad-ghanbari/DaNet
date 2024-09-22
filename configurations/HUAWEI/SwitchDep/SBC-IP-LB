@@ -1,0 +1,11 @@
+
+sysname exchParam
+
+Ip route-static vpn-instance VPN-NGN_signaling netParam maskParam remoteIpParam
+
+#
+bgp 65021
+  ipv4-family vpn-instance VPN-NGN_signaling
+  import-route static
+  param
+#

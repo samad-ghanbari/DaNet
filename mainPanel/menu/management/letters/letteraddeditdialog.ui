@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LetterAddEditDialog</class>
+ <widget class="QDialog" name="LetterAddEditDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>530</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>530</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>530</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Tahoma</family>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Letter Management</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../../image.qrc">
+    <normaloff>:/Image/letters.png</normaloff>:/Image/letters.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Tahoma</family>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 85, 255);</string>
+       </property>
+       <property name="text">
+        <string>Add New Letter Information</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_7">
+       <property name="minimumSize">
+        <size>
+         <width>64</width>
+         <height>64</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>64</width>
+         <height>64</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="../../../../image.qrc">:/Image/letters.png</pixmap>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(52, 101, 164);</string>
+       </property>
+       <property name="text">
+        <string>Letter ID:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="letterIdLE">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(52, 101, 164);</string>
+       </property>
+       <property name="text">
+        <string>Letter No:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="letterNoLE">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(52, 101, 164);</string>
+       </property>
+       <property name="text">
+        <string>From Department:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="fromCB">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>مخابرات ایران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>معاونت شبکه ایران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>معاونت تجاری ایران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>منطقه تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>معاونت شبکه تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>معاونت تجاری تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل طرح و مهندسی</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل پشتیبانی و راه اندازی شبکه </string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل عملیات شبکه </string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل نظارت، آزمایش و تحویل</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل فناوری تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل تدارکات و خرید منطقه تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل اداری و منابع انسانی</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل برنامه ریزی </string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل فروش</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>دفتر حراست</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی دیتا</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی سوییچ</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی اکسس</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی شبکه ارتباط</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی شبکه انتقال</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۲</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۳</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۴</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۵</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۶</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۷</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۸</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(52, 101, 164);</string>
+       </property>
+       <property name="text">
+        <string>To Department:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="toCB">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>مخابرات ایران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>معاونت شبکه ایران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>معاونت تجاری ایران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>منطقه تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>معاونت شبکه تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>معاونت تجاری تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل طرح و مهندسی</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل پشتیبانی و راه اندازی شبکه </string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل عملیات شبکه </string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل نظارت، آزمایش و تحویل</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل فناوری تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل تدارکات و خرید منطقه تهران</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل اداری و منابع انسانی</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل برنامه ریزی</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل فروش</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>دفتر حراست</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی دیتا</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی سوییچ</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی اکسس</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی شبکه ارتباط</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره طرح و مهندسی شبکه انتقال</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۲</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۳</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۴</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۵</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۶</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۷</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>اداره کل مخابرات منطقه ۸</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(52, 101, 164);</string>
+       </property>
+       <property name="text">
+        <string>Description:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="descTE">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>17</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="okBtn">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../../image.qrc">
+         <normaloff>:/Image/Done.png</normaloff>:/Image/Done.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../../../image.qrc"/>
+ </resources>
+ <connections/>
+</ui>

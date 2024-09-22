@@ -1,0 +1,14 @@
+sysname exchangeParam-switchParamAggAggNO-01
+#
+interface gigabitEthernetParam interfaceParam
+   description TO-[exchangeParam-Acess-S9306-SWNo-remoteInterfaceParam]
+   eth-trunk ethParam
+#
+interface Eth-Trunk ethParam
+   description TO-[exchangeParam-Acess-S9306-SWNo-remoteInterfaceParam]
+   port link-type trunk
+   undo port trunk allow-pass vlan 1
+   port trunk allow-pass vlan hsiVlan sinetVlan voipVlan
+   mode lacp-static
+#
+  
