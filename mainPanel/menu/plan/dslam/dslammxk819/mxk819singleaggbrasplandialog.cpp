@@ -1,4 +1,4 @@
-#include "mxk819SingleAggbrasplandialog.h"
+#include "mxk819singleaggbrasplandialog.h"
 #include "ui_mxk819singleaggbrasplandialog.h"
 #include <QSqlQuery>
 #include "lib/database/danetdbman.h"

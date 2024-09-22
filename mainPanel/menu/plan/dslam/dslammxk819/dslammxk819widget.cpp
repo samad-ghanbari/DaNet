@@ -8,7 +8,7 @@
 #include "mainPanel/menu/plan/dslam/dslammxk819/mxk819aggmetroplandialog.h"
 #include "mainPanel/menu/plan/dslam/dslammxk819/mxk819singleaggmetroplandialog.h"
 #include "mainPanel/menu/plan/dslam/dslammxk819/mxk819brasplandialog.h"
-#include "mainPanel/menu/plan/dslam/dslammxk819/mxk819SingleAggbrasplandialog.h"
+#include "mainPanel/menu/plan/dslam/dslammxk819/mxk819singleaggbrasplandialog.h"
 #include "mainPanel/menu/plan/dslam/dslammxk819/mxk819removeplandialog.h"
 #include "mainPanel/menu/plan/dslam/dslammxk819/mxk819removeaggmetroplandialog.h"
 #include "mainPanel/menu/plan/dslam/dslammxk819/mxk819removebrasplandialog.h"
