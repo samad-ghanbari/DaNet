@@ -45,10 +45,11 @@ private:
 
     QString dslamName;
     bool ZhoneUplink;
+    bool singleAgg;
     QMap<int, QString> serviceMap;//"100", "100-102"
     QMap<QString, QString> portMap;//     "0/7/0","To..."
     QMap<int, QStringList> nmsMap;// 10, ip<<gw
-    QStringList agg1List, agg2List, aggInfo;// agg1 << ether <<port1<<port2 / vlan << desc
+    QStringList agg1List, agg2List, aggInfo;// agg1 << ether <<port1<<port2<<port3<<port4<< vlan << desc
     QStringList bras1List, bras2List;// bras << sw1 <<sw2
     QMap<int, QString> brasInfo;// 500, "To..."
     QStringList cxList;// cx << port1 << port2 <<vlan list << desc

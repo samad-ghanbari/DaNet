@@ -27,6 +27,8 @@ ReportDSLAMDialog::ReportDSLAMDialog(QWidget *parent, DanetDbMan *db) :
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowMinimizeButtonHint | Qt::WindowMinMaxButtonsHint);
 
+    singleAgg = false;
+
     ui->toolBox->setCurrentIndex(0);
 
     //area
@@ -150,6 +152,8 @@ void ReportDSLAMDialog::fillForm()
         int exchId = ui->abbrCB->currentData().toInt();
         if(ui->typeCB->currentData().toInt() == 3)
             exchId = ui->siteCB->currentData().toInt();
+
+        singleAgg = dbMan->isSingleAggExchange(exchId);
 
         ui->tabWidget->setTabEnabled(1, true);
         if( (dbMan->getSiteNode(exchId) > 1) || (!dbMan->isDslamUplinkShelf(dslamId)) )
@@ -489,13 +493,15 @@ void ReportDSLAMDialog::fillFormAggPlan()
         ui->agg1GB->setEnabled(false);
         ui->agg1GB->setVisible(false);
     }
-    //`agg1_id`, `agg2_id`, `agg1_port1_id`, `agg1_port2_id`, `agg2_port1_id`, `agg2_port2_id`,
-    //`agg1`, `agg2`, `agg1_eth`, `agg2_eth`, `agg1_interface1`, `agg1_interface2`, `agg2_interface1`, `agg2_interface2`, `allow_pass`, `description`
+    // `agg1_id`, `agg2_id`, `agg1_int1_id`, 3`agg1_int2_id`, 4`agg2_int1_id`, 5`agg2_int2_id`, 6`agg1`, 7`agg2`, 8`agg1_eth`, 9`agg2_eth`, 10`agg1_interface1`, 11`agg1_interface2`,
+    // 12`agg2_interface1`, 13`agg2_interface2`, 14`allow_pass`, 15`description`, 16`agg1_int3_id`, 17`agg1_int4_id`, 18`agg1_interface3`, 19`agg1_interface4`
     if(query->next())
     {
         bool a1 = !query->value(0).isNull();
         bool a2 = !query->value(1).isNull();
         bool a1p2 = !query->value(3).isNull();
+        bool a1p3 = !query->value(16).isNull();
+        bool a1p4 = !query->value(17).isNull();
         bool a2p2 = !query->value(5).isNull();
 
         QString agg1 = query->value(6).toString();
@@ -509,6 +515,10 @@ void ReportDSLAMDialog::fillFormAggPlan()
         agg1Int << query->value(10).toString();
         if(a1p2)
             agg1Int << query->value(11).toString();
+        if(a1p3)
+            agg1Int << query->value(18).toString();
+        if(a1p4)
+            agg1Int << query->value(19).toString();
         if(a2)
         {
             agg2Int << query->value(12).toString();
@@ -516,7 +526,7 @@ void ReportDSLAMDialog::fillFormAggPlan()
                 agg2Int << query->value(13).toString();
         }
 
-        agg1List << agg1 << QString::number(eth1)<<query->value(10).toString()<<query->value(11).toString();
+        agg1List << agg1 << QString::number(eth1)<<query->value(10).toString()<<query->value(11).toString()<<query->value(18).toString()<<query->value(19).toString();
         agg2List << agg2 <<QString::number(eth2) <<query->value(12).toString() <<query->value(13).toString();
 
         QString ap = query->value(14).toString();
@@ -719,18 +729,25 @@ void ReportDSLAMDialog::fillFormBrasPlan()
         if(list.at(0) > -1)
         {
             ui->bras1Agg1EthLbl->setText(QString::number(list.at(1)));
-            ui->bras1Agg2EthLbl->setText(QString::number(list.at(3)));
             bras1List << QString::number(list.at(1));
+        }
+        if(list.at(2) > -1)
+        {
+            ui->bras1Agg2EthLbl->setText(QString::number(list.at(3)));
             bras1List << QString::number(list.at(3));
         }
+
 
         list = dbMan->getBrasAggIdEth(bras2, motherId);
         //`agg1_id`,`agg1_eth`,`agg2_id`,`agg2_eth`
         if(list.at(0) > -1)
         {
             ui->bras2Agg1EthLbl->setText(QString::number(list.at(1)));
-            ui->bras2Agg2EthLbl->setText(QString::number(list.at(3)));
             bras2List << QString::number(list.at(1));
+        }
+        if(list.at(2) > -1)
+        {
+            ui->bras2Agg2EthLbl->setText(QString::number(list.at(3)));
             bras2List << QString::number(list.at(3));
         }
 
@@ -867,8 +884,8 @@ void ReportDSLAMDialog::on_okBtn_clicked()
             bool s = (serviceMap.count() > 0)? false : true; // now is 4
             //bool p = (portMap.count() > 0)? false : true;
             bool n = (nmsMap.count() == 2)? false : true;
-            if(agg1List.count() < 4)
-                agg1List <<" "<<" "<<" "<<" ";
+            if(agg1List.count() < 6)
+                agg1List <<" "<<" "<<" "<<" " << "" <<"";
 
             if(agg2List.count() < 4)
                 agg2List <<""<<""<<""<<"";
@@ -951,7 +968,6 @@ void ReportDSLAMDialog::on_okBtn_clicked()
 
             }
     }
-
 
 }
 

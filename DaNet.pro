@@ -4,6 +4,10 @@
 #
 #-------------------------------------------------
 
+# Build with Qt 5.12.10
+# Mysql Database version is 5.7
+
+
 QT       += core gui sql printsupport xlsx
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 14.0.1, 2024-09-22T22:48:15. -->
+<!-- Written by QtCreator 14.0.1, 2024-09-23T15:55:45. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{534722e8-595f-4196-a4df-2f4a2ef01025}</value>
+  <value type="QByteArray">{05415593-ed8a-43d8-b5d9-7e664c4505a7}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -99,8 +99,8 @@
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/samad/share/programs/Cpp/QT/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/samad/share/programs/Cpp/QT/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/samad/share/programs/CPP/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/samad/share/programs/CPP/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -138,8 +138,8 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/samad/share/programs/Cpp/QT/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/samad/share/programs/Cpp/QT/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/samad/share/programs/CPP/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/samad/share/programs/CPP/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -179,8 +179,8 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/samad/share/programs/Cpp/QT/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/samad/share/programs/Cpp/QT/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/samad/share/programs/CPP/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/home/samad/share/programs/CPP/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -244,13 +244,13 @@
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph dwarf,4096 -F 250</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/samad/share/programs/Cpp/QT/DaNet/DaNet.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/samad/share/programs/Cpp/QT/DaNet/DaNet.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/samad/share/programs/CPP/DaNet/DaNet.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/samad/share/programs/CPP/DaNet/DaNet.pro</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/samad/share/programs/Cpp/QT/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Debug</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/samad/share/programs/CPP/DaNet/build/Desktop_Qt_5_12_10_GCC_64bit-Debug</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
