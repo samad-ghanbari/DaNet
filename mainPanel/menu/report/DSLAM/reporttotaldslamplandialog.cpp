@@ -39,6 +39,7 @@ ReportTotalDSLAMPlanDialog::ReportTotalDSLAMPlanDialog(QWidget *parent, DanetDbM
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowMinimizeButtonHint | Qt::WindowMinMaxButtonsHint);
 
+    singleAgg = false;
     ui->toolBox->setCurrentIndex(0);
 
     //area
@@ -168,6 +169,7 @@ void ReportTotalDSLAMPlanDialog::fillForm()
         if(ui->typeCB->currentData().toInt() == 3)
             exchId = ui->siteCB->currentData().toInt();
 
+        singleAgg = dbMan->isSingleAggExchange(exchId);
         ui->tabWidget->setTabEnabled(1, true);
         if( (dbMan->getSiteNode(exchId) > 1) || (!dbMan->isDslamUplinkShelf(dslamId)) )
         {
@@ -1089,7 +1091,7 @@ void ReportTotalDSLAMPlanDialog::on_okBtn_clicked()
                     interSwitch = true;
             }
 
-            ReportDSLAM reportDSLAM(this, dslamPath,HUAWEIDSLAM,dslamName,interSwitch, serviceMap,nmsMap,portMap,agg1List, agg2List,aggInfo,bras1List, bras2List, brasInfo,cxList, customInfo); //, agg1CxList
+            ReportDSLAM reportDSLAM(this, dslamPath,HUAWEIDSLAM, singleAgg, dslamName,interSwitch, serviceMap,nmsMap,portMap,agg1List, agg2List,aggInfo,bras1List, bras2List, brasInfo,cxList, customInfo); //, agg1CxList
             if(reportDSLAM.print())
             {
 

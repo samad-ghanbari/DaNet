@@ -5,7 +5,7 @@
 #include <QPainter>
 #include <QPrinter>
 
-ReportDSLAM::ReportDSLAM(QObject *Parent, const QString OutputPath,const bool HuaweiDslam , const QString DslamName,const bool InterSwitchFlag, const QMap<int, QString> ServiceMap, const QMap<int, QStringList> NmsMap, QMap<QString, QString> PortMap, QStringList Agg1List, QStringList Agg2List, QStringList AggInfo, QStringList Bras1List, QStringList Bras2List, QMap<int, QString> BrasInfo, QStringList CxList,  const QString CustomInfo) : //QStringList Agg1CxList,
+ReportDSLAM::ReportDSLAM(QObject *Parent, const QString OutputPath, const bool HuaweiDslam , bool SingleAgg, const QString DslamName, const bool InterSwitchFlag, const QMap<int, QString> ServiceMap, const QMap<int, QStringList> NmsMap, QMap<QString, QString> PortMap, QStringList Agg1List, QStringList Agg2List, QStringList AggInfo, QStringList Bras1List, QStringList Bras2List, QMap<int, QString> BrasInfo, QStringList CxList,  const QString CustomInfo) : //QStringList Agg1CxList,
     QObject(Parent),
     painter(new QPainter()),
     outputPath(OutputPath),
@@ -23,6 +23,8 @@ ReportDSLAM::ReportDSLAM(QObject *Parent, const QString OutputPath,const bool Hu
     cxList(CxList)
     //agg1CxList(Agg1CxList)
 {
+
+    singleAgg = SingleAgg;
 
     if(CustomInfo.trimmed().isEmpty())
     {
@@ -127,7 +129,7 @@ bool ReportDSLAM::print()
     bool s = (serviceMap.count() > 0)? false : true;
     //bool p = (portMap.count() > 0)? false : true;
     bool n = (nmsMap.count() == 2)? false : true;
-    bool a1 = (agg1List.count() == 4)? false: true;
+    bool a1 = (agg1List.count() == 6)? false: true;
     bool a2 = (agg2List.count() == 4)? false : true;
     bool a = (aggInfo.count() == 2)? false : true;
     bool b1 = (bras1List.count() == 3)? false : true;
@@ -195,7 +197,7 @@ bool ReportDSLAM::printTable(QPrinter *printer)
 
     //agg1 agg2 int count
     int agg1IntCount= 0, agg2IntCount= 0;
-    bool agg1Flag= false,agg1Int2Flag= false, agg2Flag=false, agg2Int2Flag=false, cxFlag=false, cxInt2Flag = false;
+    bool agg1Flag= false,agg1Int2Flag= false, agg1Int3Flag= false, agg1Int4Flag= false, agg2Flag=false, agg2Int2Flag=false, cxFlag=false, cxInt2Flag = false;
 
     QString temp;
     temp = agg1List.at(0).trimmed();
@@ -205,6 +207,7 @@ bool ReportDSLAM::printTable(QPrinter *printer)
     temp = agg2List.at(0).trimmed();
     if(!temp.isEmpty())
         agg2Flag = true;
+
 
     temp = cxList.at(0).trimmed();
     if(!temp.isEmpty())
@@ -221,6 +224,19 @@ bool ReportDSLAM::printTable(QPrinter *printer)
         {
             agg1IntCount++;
             agg1Int2Flag = true;
+        }
+
+        temp = agg1List.at(4).trimmed();
+        if(!temp.isEmpty())
+        {
+            agg1IntCount++;
+            agg1Int3Flag = true;
+        }
+        temp = agg1List.at(5).trimmed();
+        if(!temp.isEmpty())
+        {
+            agg1IntCount++;
+            agg1Int4Flag = true;
         }
     }
 
@@ -920,6 +936,18 @@ bool ReportDSLAM::printTable(QPrinter *printer)
                 painter->drawRect(rect);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " "+ agg1List.at(3));// int2 of agg1
             }
+            if(agg1Int3Flag)
+            {
+                rect.setRect(0,2*agg1RowHeight, headerWidth[3], agg1RowHeight);
+                painter->drawRect(rect);
+                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " "+ agg1List.at(4));// int3 of agg1
+            }
+            if(agg1Int4Flag)
+            {
+                rect.setRect(0,3*agg1RowHeight, headerWidth[3], agg1RowHeight);
+                painter->drawRect(rect);
+                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " "+ agg1List.at(5));// int4 of agg1
+            }
 
             if(agg2Flag) painter->translate(0,aggHeight);
         }
@@ -1004,81 +1032,149 @@ bool ReportDSLAM::printTable(QPrinter *printer)
     painter->drawRect(rect);
     painter->setPen(Qt::darkMagenta);
     painter->drawText(rect, Qt::AlignCenter, "AGG1 Eth-Trunk");
-    painter->setPen(pen);
-    painter->translate(headerWidth[2], 0);
-    rect.setRect(0,0,headerWidth[3], rowHeight);
-    painter->fillRect(rect, QColor(180, 240, 200));
-    painter->drawRect(rect);
-    painter->setPen(Qt::darkMagenta);
-    painter->drawText(rect, Qt::AlignCenter, "AGG2 Eth-Trunk");
-    painter->setPen(pen);
-    painter->translate(headerWidth[3], 0);
-    rect.setRect(0,0,headerWidth[4]/2, rowHeight);
-    painter->fillRect(rect, QColor(180, 240, 200));
-    painter->drawRect(rect);
-    painter->setPen(Qt::darkMagenta);
-    painter->drawText(rect, Qt::AlignCenter, "VLAN Number");
-    painter->setPen(pen);
-    painter->translate(headerWidth[4]/2, 0);
-    rect.setRect(0,0,headerWidth[5]+headerWidth[6]+headerWidth[4]/2, rowHeight);
-    painter->fillRect(rect, QColor(180, 240, 200));
-    painter->drawRect(rect);
-    painter->setPen(Qt::darkMagenta);
-    painter->drawText(rect, Qt::AlignCenter, "Description");
-    painter->setPen(pen);
-    hw = headerWidth[1]+headerWidth[2]+headerWidth[3]+headerWidth[4]/2;
-    painter->translate(-hw, rowHeight);// ME60-1 top left
-
-    int meHeight = 4 * rowHeight;
-    painter->setFont(topicFont);
-    rect.setRect(0,0, headerWidth[1],meHeight);
-    painter->drawRect(rect);
-    painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, bras1List.at(0)); // me-1
-    if(bras2Flag)
-    {
-        rect.setRect(0,meHeight, headerWidth[1],meHeight);
-        painter->drawRect(rect);
-        painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, bras2List.at(0)); // me-2
-    }
-
-    painter->setFont(contentFont);
-    painter->translate(headerWidth[2], 0);//sw eth
-    rect.setRect(0,0, headerWidth[2], meHeight);
-    painter->drawRect(rect);
-    painter->drawText(rect, Qt::AlignCenter, bras1List.at(1));
-    if(bras2Flag)
-    {
-        rect.setRect(0,meHeight, headerWidth[2], meHeight);
-        painter->drawRect(rect);
-        painter->drawText(rect, Qt::AlignCenter, bras2List.at(1));
-    }
-
-    painter->translate(headerWidth[2], 0); // ME1-eth2
-    rect.setRect(0,0, headerWidth[3], meHeight);
-    painter->drawRect(rect);
-    painter->drawText(rect, Qt::AlignCenter, bras1List.at(2));
-    if(bras2Flag)
-    {
-        rect.setRect(0,meHeight, headerWidth[3], meHeight);
-        painter->drawRect(rect);
-        painter->drawText(rect, Qt::AlignCenter, bras2List.at(2));
-    }
-
-    painter->translate(headerWidth[3], 0);//vlan num
     QString tmp;
-    foreach (int v, brasInfo.keys())
+    if(singleAgg)
     {
+        painter->setPen(pen);
+        painter->translate(headerWidth[3], 0);
         rect.setRect(0,0,headerWidth[4]/2, rowHeight);
+        painter->fillRect(rect, QColor(180, 240, 200));
         painter->drawRect(rect);
-        painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " "+QString::number(v));
+        painter->setPen(Qt::darkMagenta);
+        painter->drawText(rect, Qt::AlignCenter, "VLAN Number");
 
-        rect.setRect(headerWidth[4]/2, 0, headerWidth[5]+headerWidth[6]+headerWidth[4]/2, rowHeight);
+        painter->setPen(pen);
+        painter->translate(headerWidth[4]/2, 0);
+        rect.setRect(0,0,headerWidth[3]+headerWidth[5]+headerWidth[6]+headerWidth[4]/2, rowHeight);
+        painter->fillRect(rect, QColor(180, 240, 200));
         painter->drawRect(rect);
-        tmp = brasInfo.value(v);
-        tmp = tmp.replace(" ","");
-        painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter |  Qt::TextWordWrap, " "+tmp);
+        painter->setPen(Qt::darkMagenta);
+        painter->drawText(rect, Qt::AlignCenter, "Description");
+        painter->setPen(pen);
+        hw = headerWidth[1]+headerWidth[3]+headerWidth[4]/2;
+        painter->translate(-hw, rowHeight);// ME60-1 top left
 
-        painter->translate(0, rowHeight);
+        int meHeight = 4 * rowHeight;
+        painter->setFont(topicFont);
+        rect.setRect(0,0, headerWidth[1],meHeight);
+        painter->drawRect(rect);
+        painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, bras1List.at(0)); // me-1
+        if(bras2Flag)
+        {
+            rect.setRect(0,meHeight, headerWidth[1],meHeight);
+            painter->drawRect(rect);
+            painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, bras2List.at(0)); // me-2
+        }
+
+        painter->setFont(contentFont);
+        painter->translate(headerWidth[3], 0);//sw eth
+        rect.setRect(0,0, headerWidth[3], meHeight);
+        painter->drawRect(rect);
+        painter->drawText(rect, Qt::AlignCenter, bras1List.at(1));
+        if(bras2Flag)
+        {
+            rect.setRect(0,meHeight, headerWidth[3], meHeight);
+            painter->drawRect(rect);
+            painter->drawText(rect, Qt::AlignCenter, bras2List.at(1));
+        }
+
+        painter->translate(headerWidth[3], 0); // >>> vlan
+
+        foreach (int v, brasInfo.keys())
+        {
+            rect.setRect(0,0,headerWidth[4]/2, rowHeight);
+            painter->drawRect(rect);
+            painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " "+QString::number(v));
+
+            rect.setRect(headerWidth[4]/2, 0, headerWidth[2]+headerWidth[5]+headerWidth[6]+headerWidth[4]/2, rowHeight);
+            painter->drawRect(rect);
+            tmp = brasInfo.value(v);
+            tmp = tmp.replace(" ","");
+            painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter |  Qt::TextWordWrap, " "+tmp);
+
+            painter->translate(0, rowHeight);
+        }
+
+    }
+    else
+    {
+        painter->setPen(pen);
+        painter->translate(headerWidth[2], 0);
+        rect.setRect(0,0,headerWidth[3], rowHeight);
+        painter->fillRect(rect, QColor(180, 240, 200));
+        painter->drawRect(rect);
+        painter->setPen(Qt::darkMagenta);
+        painter->drawText(rect, Qt::AlignCenter, "AGG2 Eth-Trunk");
+        painter->setPen(pen);
+        painter->translate(headerWidth[3], 0);
+        rect.setRect(0,0,headerWidth[4]/2, rowHeight);
+        painter->fillRect(rect, QColor(180, 240, 200));
+        painter->drawRect(rect);
+        painter->setPen(Qt::darkMagenta);
+        painter->drawText(rect, Qt::AlignCenter, "VLAN Number");
+        painter->setPen(pen);
+        painter->translate(headerWidth[4]/2, 0);
+        rect.setRect(0,0,headerWidth[5]+headerWidth[6]+headerWidth[4]/2, rowHeight);
+        painter->fillRect(rect, QColor(180, 240, 200));
+        painter->drawRect(rect);
+        painter->setPen(Qt::darkMagenta);
+        painter->drawText(rect, Qt::AlignCenter, "Description");
+        painter->setPen(pen);
+        hw = headerWidth[1]+headerWidth[2]+headerWidth[3]+headerWidth[4]/2;
+        painter->translate(-hw, rowHeight);// ME60-1 top left
+
+        int meHeight = 4 * rowHeight;
+        painter->setFont(topicFont);
+        rect.setRect(0,0, headerWidth[1],meHeight);
+        painter->drawRect(rect);
+        painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, bras1List.at(0)); // me-1
+        if(bras2Flag)
+        {
+            rect.setRect(0,meHeight, headerWidth[1],meHeight);
+            painter->drawRect(rect);
+            painter->drawText(rect, Qt::AlignCenter | Qt::TextWordWrap, bras2List.at(0)); // me-2
+        }
+
+        painter->setFont(contentFont);
+        painter->translate(headerWidth[2], 0);//sw eth
+        rect.setRect(0,0, headerWidth[2], meHeight);
+        painter->drawRect(rect);
+        painter->drawText(rect, Qt::AlignCenter, bras1List.at(1));
+        if(bras2Flag)
+        {
+            rect.setRect(0,meHeight, headerWidth[2], meHeight);
+            painter->drawRect(rect);
+            painter->drawText(rect, Qt::AlignCenter, bras2List.at(1));
+        }
+
+        painter->translate(headerWidth[2], 0); // ME1-eth2
+        rect.setRect(0,0, headerWidth[3], meHeight);
+        painter->drawRect(rect);
+        painter->drawText(rect, Qt::AlignCenter, bras1List.at(2));
+        if(bras2Flag)
+        {
+            rect.setRect(0,meHeight, headerWidth[3], meHeight);
+            painter->drawRect(rect);
+            painter->drawText(rect, Qt::AlignCenter, bras2List.at(2));
+        }
+
+        painter->translate(headerWidth[3], 0);//vlan num
+        QString tmp;
+        foreach (int v, brasInfo.keys())
+        {
+            rect.setRect(0,0,headerWidth[4]/2, rowHeight);
+            painter->drawRect(rect);
+            painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " "+QString::number(v));
+
+            rect.setRect(headerWidth[4]/2, 0, headerWidth[5]+headerWidth[6]+headerWidth[4]/2, rowHeight);
+            painter->drawRect(rect);
+            tmp = brasInfo.value(v);
+            tmp = tmp.replace(" ","");
+            painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter |  Qt::TextWordWrap, " "+tmp);
+
+            painter->translate(0, rowHeight);
+        }
+
     }
 
     if(bras2Flag)
@@ -1089,7 +1185,7 @@ bool ReportDSLAM::printTable(QPrinter *printer)
             painter->drawRect(rect);
             painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " "+QString::number(v));
 
-            rect.setRect(headerWidth[4]/2, 0, headerWidth[5]+headerWidth[6]+headerWidth[4]/2,rowHeight);
+            rect.setRect(headerWidth[4]/2, 0, headerWidth[2]+headerWidth[5]+headerWidth[6]+headerWidth[4]/2,rowHeight);
             painter->drawRect(rect);
             tmp = brasInfo.value(v);
             tmp = tmp.replace(" ","");
@@ -1100,7 +1196,7 @@ bool ReportDSLAM::printTable(QPrinter *printer)
     }
 
     //########################METRO
-    painter->translate(-headerWidth[0]-headerWidth[1]-headerWidth[2]-headerWidth[3], 0);
+    painter->translate(-headerWidth[0]-headerWidth[1]-headerWidth[3], 0);
 
     int cxRowHeight, metroHeight;
     metroHeight = 5 * rowHeight;

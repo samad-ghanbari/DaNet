@@ -941,7 +941,7 @@ void ReportDSLAMDialog::on_okBtn_clicked()
 
                 if(customInfo.isEmpty())
                 {
-                    ReportDSLAM reportDSLAM(this, path,HUAWEIDSLAM,dslamName,interSwitch, serviceMap,nmsMap,portMap,agg1List, agg2List,aggInfo,bras1List, bras2List, brasInfo,cxList);//agg1CxList
+                    ReportDSLAM reportDSLAM(this, path,HUAWEIDSLAM, singleAgg, dslamName,interSwitch, serviceMap,nmsMap,portMap,agg1List, agg2List,aggInfo,bras1List, bras2List, brasInfo,cxList);//agg1CxList
                     if(reportDSLAM.print())
                     {
                         QDesktopServices::openUrl(path);
@@ -953,7 +953,7 @@ void ReportDSLAMDialog::on_okBtn_clicked()
                 }
                 else
                 {
-                    ReportDSLAM reportDSLAM(this, path,HUAWEIDSLAM,dslamName,interSwitch, serviceMap,nmsMap,portMap,agg1List, agg2List,aggInfo,bras1List, bras2List, brasInfo,cxList,  customInfo);//agg1CxList,
+                    ReportDSLAM reportDSLAM(this, path,HUAWEIDSLAM, singleAgg, dslamName,interSwitch, serviceMap,nmsMap,portMap,agg1List, agg2List,aggInfo,bras1List, bras2List, brasInfo,cxList,  customInfo);//agg1CxList,
                     if(reportDSLAM.print())
                     {
                         QDesktopServices::openUrl(path);

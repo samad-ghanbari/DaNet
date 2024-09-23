@@ -14,7 +14,7 @@ class ReportDSLAM : public QObject
 {
     Q_OBJECT
 public:
-  ReportDSLAM(QObject *Parent, const QString OutputPath, const bool HuaweiDslam, const QString DslamName, const bool InterSwitchFlag, const QMap<int, QString> ServiceMap, const QMap<int, QStringList> NmsMap, QMap<QString, QString> PortMap, QStringList Agg1List, QStringList Agg2List, QStringList AggInfo, QStringList Bras1List, QStringList Bras2List, QMap<int, QString> BrasInfo, QStringList CxList, const QString CustomInfo = "");//, QStringList Agg1CxList
+  ReportDSLAM(QObject *Parent, const QString OutputPath, const bool HuaweiDslam, bool SingleAgg, const QString DslamName, const bool InterSwitchFlag, const QMap<int, QString> ServiceMap, const QMap<int, QStringList> NmsMap, QMap<QString, QString> PortMap, QStringList Agg1List, QStringList Agg2List, QStringList AggInfo, QStringList Bras1List, QStringList Bras2List, QMap<int, QString> BrasInfo, QStringList CxList, const QString CustomInfo = "");//, QStringList Agg1CxList
   ~ReportDSLAM();
   QString lastError();
   void preparePage();
@@ -24,6 +24,7 @@ public:
   QString listToRange(QList<int> list);
   QList<int> rangeToList(QString range);
 private:
+  bool singleAgg;
   QPainter *painter;
   const QString outputPath;
   const QString dslamName;

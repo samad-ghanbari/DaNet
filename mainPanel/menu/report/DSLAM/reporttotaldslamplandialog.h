@@ -49,6 +49,7 @@ private:
     QSqlQueryModel *intModel, *odfModel,*deviceModel;
     QStandardItemModel  *topoModel ;
     int dslamId;
+    bool singleAgg;
 
     QString dslamName;
     QMap<int, QString> serviceMap;//"100", "100-102"
