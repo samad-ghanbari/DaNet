@@ -142,16 +142,18 @@ void RemoveDSLAMDialog::fillForm()
     hideGB();
     if(dbMan->dslamExistance(dslamId))
     {
+        int exchId = ui->abbrCB->currentData().toInt();
+        if(ui->typeCB->currentData().toInt() == 3)
+            exchId = ui->siteCB->currentData().toInt();
+
+        singleAgg = dbMan->isSingleAggExchange(exchId);
+
         // fill
         fillFormDslamPlan();
         fillFormAggPlan();
         fillFormMetroPlan();
         fillFormBrasPlan();
 
-
-        int exchId = ui->abbrCB->currentData().toInt();
-        if(ui->typeCB->currentData().toInt() == 3)
-            exchId = ui->siteCB->currentData().toInt();
 
         ui->tabWidget->setTabEnabled(1, true);
         if( (dbMan->getSiteNode(exchId) > 1) || (!dbMan->isDslamUplinkShelf(dslamId)) )
@@ -473,7 +475,7 @@ void RemoveDSLAMDialog::fillFormAggPlan()
     agg2AllowPassModel->setStringList(QStringList());
     ui->agg2DescLbl->clear();
 
-    Agg1  = QStringList() <<""<<""<<""<<""<<"-1"<<"-1";
+    Agg1  = QStringList() <<""<<""<<""<<""<<""<<""<<"-1" <<"-1" <<"-1" <<"-1"; // Agg1 << eth << int1 << int2 << int3 << int4 << int1Id << int2Id << int3Id << int4Id
     Agg2  = QStringList() <<""<<""<<""<<""<<"-1"<<"-1";
 
     dslamId = ui->dslamCB->currentData().toInt();
@@ -493,14 +495,18 @@ void RemoveDSLAMDialog::fillFormAggPlan()
         ui->agg1GB->setEnabled(false);
         ui->agg1GB->setVisible(false);
     }
-    //`agg1_id`, `agg2_id`, `agg1_port1_id`, `agg1_port2_id`, `agg2_port1_id`, `agg2_port2_id`,
-    //`agg1`, `agg2`, `agg1_eth`, `agg2_eth`, `agg1_interface1`, `agg1_interface2`, `agg2_interface1`, `agg2_interface2`, `allow_pass`, `description`
+    //0`agg1_id`, 1`agg2_id`, 2`agg1_int1_id`, 3`agg1_int2_id`, 4`agg2_int1_id`, 5`agg2_int2_id`, 6`agg1`, 7`agg2`, 8`agg1_eth`, 9`agg2_eth`,
+    //10`agg1_interface1`, 11`agg1_interface2`, 12`agg2_interface1`, 13`agg2_interface2`, 14`allow_pass`, 15`description`, 16`agg1_int3_id`,
+    //17`agg1_int4_id`, 18`agg1_interface3`, 19`agg1_interface4`
+
     if(query->next())
     {
         bool a1 = !query->value(0).isNull();
         bool a2 = !query->value(1).isNull();
         bool a1p2 = !query->value(3).isNull();
         bool a2p2 = !query->value(5).isNull();
+        bool a1p3 = !query->value(16).isNull();
+        bool a1p4 = !query->value(17).isNull();
 
         QString agg1 = query->value(6).toString();
         agg1 = agg1.replace(" ", "");
@@ -513,6 +519,11 @@ void RemoveDSLAMDialog::fillFormAggPlan()
         agg1Int << query->value(10).toString();
         if(a1p2)
             agg1Int << query->value(11).toString();
+        if(a1p3)
+            agg1Int << query->value(18).toString();
+        if(a1p4)
+            agg1Int << query->value(19).toString();
+
         if(a2)
         {
             agg2Int << query->value(12).toString();
@@ -520,15 +531,20 @@ void RemoveDSLAMDialog::fillFormAggPlan()
                 agg2Int << query->value(13).toString();
         }
 
-        agg1List << agg1 << QString::number(eth1)<<query->value(10).toString()<<query->value(11).toString();
+        agg1List << agg1 << QString::number(eth1)<<query->value(10).toString()<<query->value(11).toString()<<query->value(18).toString()<<query->value(19).toString();
         agg2List << agg2 <<QString::number(eth2) <<query->value(12).toString() <<query->value(13).toString();
 
         Agg1[0] = agg1;
         Agg1[1] = QString::number(eth1);
-        Agg1[2] = query->value(10).toString();
-        Agg1[3] = query->value(11).toString();
-        Agg1[4] = query->value(2).toString(); //id -> odf
-        Agg1[5] = query->value(3).toString();
+        Agg1[2] = query->value(10).toString();//int1
+        Agg1[3] = query->value(11).toString();//int2
+        Agg1[4] = query->value(16).toString();//int3
+        Agg1[5] = query->value(17).toString();//int4
+        Agg1[6] = query->value(2).toString(); //intid1 -> odf
+        Agg1[7] = query->value(3).toString();//intid2
+        Agg1[8] = query->value(16).toString();//intid3
+        Agg1[9] = query->value(17).toString();//intid4
+
         if(query->value(2).isNull())
         {
             Agg1[4] = "-1";
@@ -609,26 +625,46 @@ void RemoveDSLAMDialog::fillFormAggPlan()
     }
 
     QString i;
-    i = Agg1[4];
+    i = Agg1[6];
     int iId = i.toInt();//i1
     int pinId;
     if(iId > -1)
     {
         pinId = dbMan->getInterfacePinId(iId);
-        Agg1[4] = dbMan->getOdfPosPinString(pinId);
+        Agg1[6] = dbMan->getOdfPosPinString(pinId);
     }
     else
         Agg1[2] = "";
 
-    i = Agg1[5];
+    i = Agg1[7];
     iId = i.toInt();//i2
     if(iId > -1)
     {
         pinId = dbMan->getInterfacePinId(iId);
-        Agg1[5] = dbMan->getOdfPosPinString(pinId);
+        Agg1[7] = dbMan->getOdfPosPinString(pinId);
     }
     else
         Agg1[3] ="";
+
+    i = Agg1[8];
+    iId = i.toInt();//i2
+    if(iId > -1)
+    {
+        pinId = dbMan->getInterfacePinId(iId);
+        Agg1[8] = dbMan->getOdfPosPinString(pinId);
+    }
+    else
+        Agg1[4] ="";
+
+    i = Agg1[9];
+    iId = i.toInt();//i2
+    if(iId > -1)
+    {
+        pinId = dbMan->getInterfacePinId(iId);
+        Agg1[9] = dbMan->getOdfPosPinString(pinId);
+    }
+    else
+        Agg1[5] ="";
 
 
 
@@ -906,6 +942,16 @@ void RemoveDSLAMDialog::fillFormBrasPlan()
         ui->bras2GB->setVisible(false);
         ui->brasTV->setVisible(false);
     }
+
+
+    if(singleAgg)
+    {
+        ui->bras1Agg2EthLbl->setVisible(false);
+        ui->b1a2Lbl->setVisible(false);
+
+        ui->bras2Agg2EthLbl->setVisible(false);
+        ui->b2a2Lbl->setVisible(false);
+    }
 }
 
 void RemoveDSLAMDialog::hideGB()
@@ -1140,8 +1186,8 @@ void RemoveDSLAMDialog::on_okBtn_clicked()
         bool s = (serviceMap.count() == 6)? false : true;
         //bool p = (portMap.count() > 0)? false : true;
         bool n = (nmsMap.count() == 2)? false : true;
-        if(agg1List.count() < 4)
-            agg1List <<" "<<" "<<" "<<" ";
+        if(agg1List.count() < 6)
+            agg1List <<" "<<" "<<" "<<" "<<""<<"";
 
         if(agg2List.count() < 4)
             agg2List <<""<<""<<""<<"";
@@ -1249,10 +1295,14 @@ void RemoveDSLAMDialog::on_okBtn_clicked()
             Dslam = ui->dslamCB->currentText();
             IPm = nmsMap.value(11)[0];
             Vlan = serviceMap.value(300)+" "+serviceMap.value(400)+" "+serviceMap.value(500)+" "+serviceMap.value(600)+" "+serviceMap.value(700)+" "+serviceMap.value(800);
-            Bras << bras1List[0] << bras2List[0] << bras1List[1]+","+bras1List[2]; // b1, b2, eth1,2
+            if(singleAgg)
+                Bras << bras1List[0] << bras2List[0] << bras1List[1]; // b1, b2, eth1,2
+            else
+                Bras << bras1List[0] << bras2List[0] << bras1List[1]+","+bras1List[2]; // b1, b2, eth1,2
+
             //Agg1, Agg2, Cx : agg,eth,int1, int2, odf1, odf2
 
-            while(Agg1.count() < 6)
+            while(Agg1.count() < 10)
                 Agg1 << "";
             while(Agg2.count() < 6)
                 Agg2 << "";

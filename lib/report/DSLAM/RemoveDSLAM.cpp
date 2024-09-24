@@ -102,7 +102,7 @@ bool RemoveDSLAM::print()
     bool m = mother.isEmpty();
     bool e = exch.isEmpty();
     bool im = ipm.isEmpty();
-    bool a1 = (agg1.count() == 6)? false : true;
+    bool a1 = (agg1.count() == 10)? false : true;
     bool a2 = (agg2.count() == 6)? false : true;
     bool c =  (cx.count() == 6)? false : true;
     bool b = (bras.count() == 3) ? false : true;
@@ -184,7 +184,7 @@ bool RemoveDSLAM::printTable(QPrinter *printer)
     // bras:2   agg1:2  agg2:2  cx:2
 
     //bras: bras1<< bras2<<e1,e2
-    //agg1: agg << eth << i1 << i2 << o1 << o2
+    //agg1: agg << eth << i1 << i2 << i3 << i4 << o1 << o2 << o3 << o4;
     //agg2: agg << eth << i1 << i2 << o1 << o2
     //cx :  cx << eth << i1 << i2 << o1 << o2
 
@@ -357,81 +357,125 @@ bool RemoveDSLAM::printTable(QPrinter *printer)
 
     }
 
-    //AGG1   //agg1: agg << eth << i1 << i2 << o1 << o2
+    //AGG1   //agg1: agg << eth << i1 << i2 << i3 << i4 << o1 << o2 << o3 << o4
     if(!QString(agg1[0]).isEmpty())
     {
-        if(!QString(agg1[2]).isEmpty() || !QString(agg1[3]).isEmpty())
+        if(!QString(agg1[2]).isEmpty() || !QString(agg1[3]).isEmpty() || !QString(agg1[4]).isEmpty() || !QString(agg1[5]).isEmpty())
         {
-            if(QString(agg1[2]).isEmpty() || QString(agg1[3]).isEmpty())
-                rect.setRect(0, 0, headerWidth[0], rowHeight);
-            else
-                rect.setRect(0, 0, headerWidth[0], 2*rowHeight);
+            int aggRowHeight = rowHeight;
+
+            if(!QString(agg1[2]).isEmpty() && !QString(agg1[3]).isEmpty() && !QString(agg1[4]).isEmpty() && !QString(agg1[5]).isEmpty())
+                aggRowHeight = rowHeight;
+            else if(QString(agg1[4]).isEmpty() && QString(agg1[5]).isEmpty())
+                aggRowHeight = 2*rowHeight;
+            else if(QString(agg1[3]).isEmpty() && QString(agg1[4]).isEmpty() && QString(agg1[5]).isEmpty())
+                aggRowHeight = 4*rowHeight;
+
+            rect.setRect(0, 0, headerWidth[0], aggRowHeight);
 
             painter->fillRect(rect, QColor(200, 220, 255));
             painter->drawRect(rect);
             painter->setFont(headersFont);
             painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " "+agg1[0]+" To DSLAM");
             //eth
-            if(QString(agg1[2]).isEmpty() || QString(agg1[3]).isEmpty())
-                rect.setRect(headerWidth[0], 0, headerWidth[1], rowHeight);
-            else
-                rect.setRect(headerWidth[0], 0, headerWidth[1], 2*rowHeight);
+            rect.setRect(headerWidth[0], 0, headerWidth[1], aggRowHeight);
+
             painter->fillRect(rect, QColor(220, 255, 220));
             painter->drawRect(rect);
             painter->setFont(headersFont);
             painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " Eth: "+agg1[1]);
             //int1
 
+            //0agg << 1eth << 2i1 << 3i2 << 4i3 << 5i4 << 6o1 << 7o2 << 8o3 << 9o4
             if(!QString(agg1[2]).isEmpty())
             {//i1
-                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], rowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], aggRowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[2]);
 
-                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], rowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], aggRowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
-                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[4]);
+                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[6]);
             }
-            else
+
+
+
+            if(!QString(agg1[3]).isEmpty())
             {
                 //int2
-                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], rowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], aggRowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[3]);
 
-                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], rowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], aggRowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
-                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[5]);
+                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[7]);
             }
 
-            if(!QString(agg1[2]).isEmpty() && !QString(agg1[3]).isEmpty())
+            if(!QString(agg1[4]).isEmpty())
             {
-                //int2
-                rect.setRect(headerWidth[0]+headerWidth[1], rowHeight, headerWidth[2], rowHeight);
+                //int3
+                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], aggRowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
-                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[3]);
+                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[4]);
 
-                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], rowHeight, headerWidth[3], rowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], aggRowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
-                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[5]);
-
-                painter->translate(0, 2*rowHeight);
-
+                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[8]);
             }
-            else
-                painter->translate(0, rowHeight);
+
+            if(!QString(agg1[5]).isEmpty())
+            {
+                //int3
+                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], aggRowHeight);
+                painter->fillRect(rect, QColor(220, 255, 220));
+                painter->drawRect(rect);
+                painter->setFont(headersFont);
+                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[5]);
+
+                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], aggRowHeight);
+                painter->fillRect(rect, QColor(220, 255, 220));
+                painter->drawRect(rect);
+                painter->setFont(headersFont);
+                painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[9]);
+            }
+
+
+
+
+
+            // if(!QString(agg1[2]).isEmpty() && !QString(agg1[3]).isEmpty())
+            // {
+            //     //int2
+            //     rect.setRect(headerWidth[0]+headerWidth[1], rowHeight, headerWidth[2], rowHeight);
+            //     painter->fillRect(rect, QColor(220, 255, 220));
+            //     painter->drawRect(rect);
+            //     painter->setFont(headersFont);
+            //     painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[3]);
+
+            //     rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], rowHeight, headerWidth[3], rowHeight);
+            //     painter->fillRect(rect, QColor(220, 255, 220));
+            //     painter->drawRect(rect);
+            //     painter->setFont(headersFont);
+            //     painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[5]);
+
+            //     painter->translate(0, 2*rowHeight);
+
+            // }
+            // else
+                painter->translate(0, 4*rowHeight);
         }
 
     }

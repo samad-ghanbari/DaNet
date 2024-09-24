@@ -45,6 +45,7 @@ private:
     QStringListModel *cxIntModel, *cxAllowPassModel, *agg1IntModel,*agg1AllowPassModel,*agg2IntModel,*agg2AllowPassModel;
     QStandardItemModel  *topoModel ;
     int dslamId;
+    bool singleAgg;
 
     QString dslamName;
     bool ZhoneUplink;
@@ -53,6 +54,7 @@ private:
     QMap<int, QStringList> nmsMap;// 10, ip<<gw
     QStringList agg1List, agg2List, aggInfo;// agg1 << ether <<port1<<port2 / vlan << desc
     QStringList Agg1, Agg2, Cx;// Agg/cx << eth << int1 << int2 << int1Id << int2Id
+                               // Agg1 << eth << int1 << int2 << int3 << int4 << int1Id << int2Id << int3Id << int4Id
     QStringList bras1List, bras2List;// bras << sw1 <<sw2
     QMap<int, QString> brasInfo;// 500, "To..."
     QStringList cxList;// cx << port1 << port2 <<vlan list << desc
