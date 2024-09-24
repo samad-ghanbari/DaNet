@@ -538,8 +538,8 @@ void RemoveDSLAMDialog::fillFormAggPlan()
         Agg1[1] = QString::number(eth1);
         Agg1[2] = query->value(10).toString();//int1
         Agg1[3] = query->value(11).toString();//int2
-        Agg1[4] = query->value(16).toString();//int3
-        Agg1[5] = query->value(17).toString();//int4
+        Agg1[4] = query->value(18).toString();//int3
+        Agg1[5] = query->value(19).toString();//int4
         Agg1[6] = query->value(2).toString(); //intid1 -> odf
         Agg1[7] = query->value(3).toString();//intid2
         Agg1[8] = query->value(16).toString();//intid3
@@ -1317,7 +1317,6 @@ void RemoveDSLAMDialog::on_okBtn_clicked()
                 QMessageBox::warning(this,"Error", "Problem removing DSLAM. "+removeDslam.lastError());
                 return;
             }
-
 
             //######################################### REMOVE DSLAM PLAN
 

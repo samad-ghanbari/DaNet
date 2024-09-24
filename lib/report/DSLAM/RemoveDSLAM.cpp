@@ -198,6 +198,10 @@ bool RemoveDSLAM::printTable(QPrinter *printer)
         totalRowCount--;
     if(QString(agg1[3]).isEmpty())
         totalRowCount--;
+    if(QString(agg1[4]).isEmpty())
+        totalRowCount--;
+    if(QString(agg1[5]).isEmpty())
+        totalRowCount--;
 
     if(QString(agg2[2]).isEmpty())
         totalRowCount--;
@@ -365,11 +369,11 @@ bool RemoveDSLAM::printTable(QPrinter *printer)
             int aggRowHeight = rowHeight;
 
             if(!QString(agg1[2]).isEmpty() && !QString(agg1[3]).isEmpty() && !QString(agg1[4]).isEmpty() && !QString(agg1[5]).isEmpty())
-                aggRowHeight = rowHeight;
+                aggRowHeight = 4*rowHeight;
             else if(QString(agg1[4]).isEmpty() && QString(agg1[5]).isEmpty())
                 aggRowHeight = 2*rowHeight;
             else if(QString(agg1[3]).isEmpty() && QString(agg1[4]).isEmpty() && QString(agg1[5]).isEmpty())
-                aggRowHeight = 4*rowHeight;
+                aggRowHeight = rowHeight;
 
             rect.setRect(0, 0, headerWidth[0], aggRowHeight);
 
@@ -387,15 +391,15 @@ bool RemoveDSLAM::printTable(QPrinter *printer)
             //int1
 
             //0agg << 1eth << 2i1 << 3i2 << 4i3 << 5i4 << 6o1 << 7o2 << 8o3 << 9o4
-            if(!QString(agg1[2]).isEmpty())
+            if(!QString(agg1[2]).isEmpty()) // int1
             {//i1
-                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], aggRowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], rowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[2]);
 
-                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], aggRowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], rowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
@@ -404,78 +408,55 @@ bool RemoveDSLAM::printTable(QPrinter *printer)
 
 
 
-            if(!QString(agg1[3]).isEmpty())
+            if(!QString(agg1[3]).isEmpty()) // int2
             {
                 //int2
-                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], aggRowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1], rowHeight, headerWidth[2], rowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[3]);
 
-                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], aggRowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], rowHeight, headerWidth[3], rowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[7]);
             }
 
-            if(!QString(agg1[4]).isEmpty())
+            if(!QString(agg1[4]).isEmpty()) // int 3
             {
                 //int3
-                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], aggRowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1], 2*rowHeight, headerWidth[2], rowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[4]);
 
-                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], aggRowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 2*rowHeight, headerWidth[3], rowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[8]);
             }
 
-            if(!QString(agg1[5]).isEmpty())
+            if(!QString(agg1[5]).isEmpty()) // int 4
             {
                 //int3
-                rect.setRect(headerWidth[0]+headerWidth[1], 0, headerWidth[2], aggRowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1], 3*rowHeight, headerWidth[2], rowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[5]);
 
-                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 0, headerWidth[3], aggRowHeight);
+                rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], 3*rowHeight, headerWidth[3], rowHeight);
                 painter->fillRect(rect, QColor(220, 255, 220));
                 painter->drawRect(rect);
                 painter->setFont(headersFont);
                 painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[9]);
             }
 
-
-
-
-
-            // if(!QString(agg1[2]).isEmpty() && !QString(agg1[3]).isEmpty())
-            // {
-            //     //int2
-            //     rect.setRect(headerWidth[0]+headerWidth[1], rowHeight, headerWidth[2], rowHeight);
-            //     painter->fillRect(rect, QColor(220, 255, 220));
-            //     painter->drawRect(rect);
-            //     painter->setFont(headersFont);
-            //     painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " int: "+agg1[3]);
-
-            //     rect.setRect(headerWidth[0]+headerWidth[1]+headerWidth[2], rowHeight, headerWidth[3], rowHeight);
-            //     painter->fillRect(rect, QColor(220, 255, 220));
-            //     painter->drawRect(rect);
-            //     painter->setFont(headersFont);
-            //     painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " ODF: "+agg1[5]);
-
-            //     painter->translate(0, 2*rowHeight);
-
-            // }
-            // else
-                painter->translate(0, 4*rowHeight);
+            painter->translate(0, aggRowHeight);
         }
 
     }
