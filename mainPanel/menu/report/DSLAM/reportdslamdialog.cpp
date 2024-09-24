@@ -142,18 +142,17 @@ void ReportDSLAMDialog::fillForm()
     hideGB();
     if(dbMan->dslamExistance(dslamId))
     {
-        // fill
-        fillFormDslamPlan();
-        fillFormAggPlan();
-        fillFormMetroPlan();
-        fillFormBrasPlan();
-
-
         int exchId = ui->abbrCB->currentData().toInt();
         if(ui->typeCB->currentData().toInt() == 3)
             exchId = ui->siteCB->currentData().toInt();
 
         singleAgg = dbMan->isSingleAggExchange(exchId);
+
+        // fill
+        fillFormDslamPlan();
+        fillFormAggPlan();
+        fillFormMetroPlan();
+        fillFormBrasPlan();
 
         ui->tabWidget->setTabEnabled(1, true);
         if( (dbMan->getSiteNode(exchId) > 1) || (!dbMan->isDslamUplinkShelf(dslamId)) )
@@ -519,6 +518,7 @@ void ReportDSLAMDialog::fillFormAggPlan()
             agg1Int << query->value(18).toString();
         if(a1p4)
             agg1Int << query->value(19).toString();
+
         if(a2)
         {
             agg2Int << query->value(12).toString();
@@ -689,11 +689,12 @@ void ReportDSLAMDialog::fillFormBrasPlan()
     QString mother = dbMan->getExchangeAbbr(motherId);
 
     QString str1 = "Ether-Trunk to "+mother +" Agg1 :";
-    QString str2 = "Ether-Trunk to "+mother +" Agg2 :";
     ui->b1a1Lbl->setText(str1);
-    ui->b1a2Lbl->setText(str2);
     ui->b2a1Lbl->setText(str1);
+    QString str2 = "Ether-Trunk to "+mother +" Agg2 :";
+    ui->b1a2Lbl->setText(str2);
     ui->b2a2Lbl->setText(str2);
+
 
     if(dbMan->dslamPppoeExistance(dslamId))
     {
@@ -799,6 +800,16 @@ void ReportDSLAMDialog::fillFormBrasPlan()
         ui->bras2GB->setEnabled(false);
         ui->bras2GB->setVisible(false);
         ui->brasTV->setVisible(false);
+    }
+
+
+    if(singleAgg)
+    {
+        ui->bras1Agg2EthLbl->setText("");
+        ui->b1a2Lbl->setText("");
+
+        ui->bras2Agg2EthLbl->setText("");
+        ui->b2a2Lbl->setText("");
     }
 }
 

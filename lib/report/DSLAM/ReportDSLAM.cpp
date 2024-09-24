@@ -1185,7 +1185,10 @@ bool ReportDSLAM::printTable(QPrinter *printer)
             painter->drawRect(rect);
             painter->drawText(rect, Qt::AlignLeft | Qt::AlignVCenter, " "+QString::number(v));
 
-            rect.setRect(headerWidth[4]/2, 0, headerWidth[2]+headerWidth[5]+headerWidth[6]+headerWidth[4]/2,rowHeight);
+            if(singleAgg)
+                rect.setRect(headerWidth[4]/2, 0, headerWidth[2]+headerWidth[5]+headerWidth[6]+headerWidth[4]/2,rowHeight);
+            else
+                rect.setRect(headerWidth[4]/2, 0, headerWidth[5]+headerWidth[6]+headerWidth[4]/2,rowHeight);
             painter->drawRect(rect);
             tmp = brasInfo.value(v);
             tmp = tmp.replace(" ","");
@@ -1196,7 +1199,10 @@ bool ReportDSLAM::printTable(QPrinter *printer)
     }
 
     //########################METRO
-    painter->translate(-headerWidth[0]-headerWidth[1]-headerWidth[3], 0);
+    if(singleAgg)
+        painter->translate(-headerWidth[0]-headerWidth[1]-headerWidth[2], 0);
+    else
+        painter->translate(-headerWidth[0]-headerWidth[1]-headerWidth[2]-headerWidth[3], 0);
 
     int cxRowHeight, metroHeight;
     metroHeight = 5 * rowHeight;

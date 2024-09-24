@@ -20,7 +20,6 @@
    <font>
     <family>Tahoma</family>
     <pointsize>10</pointsize>
-    <weight>75</weight>
     <bold>true</bold>
    </font>
   </property>
@@ -41,7 +40,6 @@
       <font>
        <family>Tahoma</family>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -56,7 +54,7 @@
           <item>
            <spacer name="horizontalSpacer">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -84,7 +82,6 @@
              <font>
               <family>Tahoma</family>
               <pointsize>10</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -95,7 +92,7 @@
              <string>Area :</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -117,7 +114,6 @@
              <font>
               <family>Tahoma</family>
               <pointsize>10</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -144,7 +140,6 @@
              <font>
               <family>Tahoma</family>
               <pointsize>10</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -155,7 +150,7 @@
              <string>Exchange Abbr :</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -177,7 +172,6 @@
              <font>
               <family>Tahoma</family>
               <pointsize>10</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -204,7 +198,6 @@
              <font>
               <family>Tahoma</family>
               <pointsize>10</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -215,7 +208,7 @@
              <string>Type :</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -237,7 +230,6 @@
              <font>
               <family>Tahoma</family>
               <pointsize>10</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -255,7 +247,7 @@
              </font>
             </property>
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -288,10 +280,10 @@
            </font>
           </property>
           <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
+           <enum>QFrame::Shape::NoFrame</enum>
           </property>
           <property name="frameShadow">
-           <enum>QFrame::Plain</enum>
+           <enum>QFrame::Shadow::Plain</enum>
           </property>
           <property name="lineWidth">
            <number>0</number>
@@ -312,7 +304,7 @@
            <item>
             <spacer name="horizontalSpacer_6">
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -340,7 +332,6 @@
               <font>
                <family>Tahoma</family>
                <pointsize>10</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -351,7 +342,7 @@
               <string>Site Name :</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -373,7 +364,6 @@
               <font>
                <family>Tahoma</family>
                <pointsize>10</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -391,7 +381,7 @@
               </font>
              </property>
              <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+              <enum>Qt::Orientation::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -409,7 +399,7 @@
           <item>
            <spacer name="horizontalSpacer_8">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -437,7 +427,6 @@
              <font>
               <family>Tahoma</family>
               <pointsize>10</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -448,7 +437,7 @@
              <string>DSLAM :</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -470,7 +459,6 @@
              <font>
               <family>Tahoma</family>
               <pointsize>10</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -488,7 +476,7 @@
              </font>
             </property>
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -537,7 +525,6 @@
     <widget class="QToolBox" name="toolBox">
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -553,7 +540,7 @@
         <x>0</x>
         <y>0</y>
         <width>822</width>
-        <height>333</height>
+        <height>334</height>
        </rect>
       </property>
       <attribute name="label">
@@ -570,7 +557,6 @@
          </property>
          <property name="font">
           <font>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -607,7 +593,7 @@
            <item>
             <widget class="QScrollArea" name="scrollArea_4">
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <property name="lineWidth">
               <number>0</number>
@@ -621,7 +607,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>786</width>
-                <height>760</height>
+                <height>756</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -637,7 +623,6 @@
                   <font>
                    <family>Tahoma</family>
                    <pointsize>10</pointsize>
-                   <weight>75</weight>
                    <bold>true</bold>
                   </font>
                  </property>
@@ -659,7 +644,7 @@
                        </font>
                       </property>
                       <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                       <enum>Qt::Orientation::Horizontal</enum>
                       </property>
                       <property name="sizeHint" stdset="0">
                        <size>
@@ -687,7 +672,6 @@
                        <font>
                         <family>Tahoma</family>
                         <pointsize>10</pointsize>
-                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -717,7 +701,6 @@
                        <font>
                         <family>Tahoma</family>
                         <pointsize>10</pointsize>
-                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -747,7 +730,6 @@
                        <font>
                         <family>Tahoma</family>
                         <pointsize>10</pointsize>
-                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -777,7 +759,6 @@
                        <font>
                         <family>Tahoma</family>
                         <pointsize>10</pointsize>
-                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -807,7 +788,6 @@
                        <font>
                         <family>Tahoma</family>
                         <pointsize>10</pointsize>
-                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -837,7 +817,6 @@
                        <font>
                         <family>Tahoma</family>
                         <pointsize>10</pointsize>
-                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -858,7 +837,7 @@
                        </font>
                       </property>
                       <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                       <enum>Qt::Orientation::Horizontal</enum>
                       </property>
                       <property name="sizeHint" stdset="0">
                        <size>
@@ -882,7 +861,6 @@
                      <font>
                       <family>Tahoma</family>
                       <pointsize>10</pointsize>
-                      <weight>75</weight>
                       <bold>true</bold>
                      </font>
                     </property>
@@ -916,7 +894,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -949,7 +926,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -985,7 +961,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1019,7 +994,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1052,7 +1026,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1088,7 +1061,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1122,7 +1094,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1155,7 +1126,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1191,7 +1161,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1225,7 +1194,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1258,7 +1226,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1294,7 +1261,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -1320,7 +1286,6 @@
                      <font>
                       <family>Tahoma</family>
                       <pointsize>10</pointsize>
-                      <weight>75</weight>
                       <bold>true</bold>
                      </font>
                     </property>
@@ -1337,7 +1302,6 @@
                         <font>
                          <family>Tahoma</family>
                          <pointsize>10</pointsize>
-                         <weight>75</weight>
                          <bold>true</bold>
                         </font>
                        </property>
@@ -1365,7 +1329,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1398,7 +1361,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1432,7 +1394,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1465,7 +1426,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1476,7 +1436,7 @@
                              <string/>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -1502,7 +1462,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1535,7 +1494,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1546,7 +1504,7 @@
                              <string/>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -1572,7 +1530,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1605,7 +1562,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1616,7 +1572,7 @@
                              <string/>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -1631,7 +1587,6 @@
                         <font>
                          <family>Tahoma</family>
                          <pointsize>10</pointsize>
-                         <weight>75</weight>
                          <bold>true</bold>
                         </font>
                        </property>
@@ -1659,7 +1614,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1692,7 +1646,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1726,7 +1679,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1759,7 +1711,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1770,7 +1721,7 @@
                              <string/>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -1796,7 +1747,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1829,7 +1779,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1840,7 +1789,7 @@
                              <string/>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -1866,7 +1815,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1899,7 +1847,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -1910,7 +1857,7 @@
                              <string/>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -1934,7 +1881,6 @@
                      <font>
                       <family>Tahoma</family>
                       <pointsize>10</pointsize>
-                      <weight>75</weight>
                       <bold>true</bold>
                      </font>
                     </property>
@@ -1954,7 +1900,6 @@
                         <font>
                          <family>Tahoma</family>
                          <pointsize>10</pointsize>
-                         <weight>50</weight>
                          <bold>false</bold>
                         </font>
                        </property>
@@ -1965,10 +1910,10 @@
                         <bool>true</bool>
                        </property>
                        <property name="selectionMode">
-                        <enum>QAbstractItemView::SingleSelection</enum>
+                        <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
                        </property>
                        <property name="selectionBehavior">
-                        <enum>QAbstractItemView::SelectRows</enum>
+                        <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
                        </property>
                       </widget>
                      </item>
@@ -2011,7 +1956,7 @@
            <item>
             <widget class="QScrollArea" name="scrollArea_3">
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <property name="lineWidth">
               <number>0</number>
@@ -2023,9 +1968,9 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-455</y>
+                <y>0</y>
                 <width>786</width>
-                <height>745</height>
+                <height>742</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_21">
@@ -2035,7 +1980,6 @@
                   <font>
                    <family>Tahoma</family>
                    <pointsize>10</pointsize>
-                   <weight>75</weight>
                    <bold>true</bold>
                   </font>
                  </property>
@@ -2058,7 +2002,6 @@
                      <font>
                       <family>Tahoma</family>
                       <pointsize>10</pointsize>
-                      <weight>75</weight>
                       <bold>true</bold>
                      </font>
                     </property>
@@ -2075,7 +2018,6 @@
                         <font>
                          <family>Tahoma</family>
                          <pointsize>10</pointsize>
-                         <weight>75</weight>
                          <bold>true</bold>
                         </font>
                        </property>
@@ -2106,7 +2048,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2139,7 +2080,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2173,7 +2113,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2206,7 +2145,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2240,7 +2178,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2248,7 +2185,7 @@
                              <string>Interfaces :</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -2270,7 +2207,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2278,7 +2214,7 @@
                              <string notr="true">color: rgb(85, 0, 127);</string>
                             </property>
                             <property name="flow">
-                             <enum>QListView::LeftToRight</enum>
+                             <enum>QListView::Flow::LeftToRight</enum>
                             </property>
                            </widget>
                           </item>
@@ -2304,7 +2240,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2312,7 +2247,7 @@
                              <string>Allow-Pass VLAN:</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -2334,7 +2269,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2342,7 +2276,7 @@
                              <string notr="true">color: rgb(85, 0, 127);</string>
                             </property>
                             <property name="flow">
-                             <enum>QListView::LeftToRight</enum>
+                             <enum>QListView::Flow::LeftToRight</enum>
                             </property>
                            </widget>
                           </item>
@@ -2368,7 +2302,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2376,7 +2309,7 @@
                              <string>Description :</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -2404,7 +2337,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2427,7 +2359,6 @@
                         <font>
                          <family>Tahoma</family>
                          <pointsize>10</pointsize>
-                         <weight>75</weight>
                          <bold>true</bold>
                         </font>
                        </property>
@@ -2464,7 +2395,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2497,7 +2427,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2537,7 +2466,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2570,7 +2498,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2610,7 +2537,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2618,7 +2544,7 @@
                              <string>Interfaces :</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -2640,7 +2566,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2648,7 +2573,7 @@
                              <string notr="true">color: rgb(85, 0, 127);</string>
                             </property>
                             <property name="flow">
-                             <enum>QListView::LeftToRight</enum>
+                             <enum>QListView::Flow::LeftToRight</enum>
                             </property>
                            </widget>
                           </item>
@@ -2680,7 +2605,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2688,7 +2612,7 @@
                              <string>Allow-Pass VLAN:</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -2710,7 +2634,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2718,7 +2641,7 @@
                              <string notr="true">color: rgb(85, 0, 127);</string>
                             </property>
                             <property name="flow">
-                             <enum>QListView::LeftToRight</enum>
+                             <enum>QListView::Flow::LeftToRight</enum>
                             </property>
                            </widget>
                           </item>
@@ -2750,7 +2673,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2758,7 +2680,7 @@
                              <string>Description :</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                             </property>
                            </widget>
                           </item>
@@ -2786,7 +2708,6 @@
                              <font>
                               <family>Tahoma</family>
                               <pointsize>10</pointsize>
-                              <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
@@ -2818,7 +2739,6 @@
                      <font>
                       <family>Tahoma</family>
                       <pointsize>10</pointsize>
-                      <weight>75</weight>
                       <bold>true</bold>
                      </font>
                     </property>
@@ -2855,7 +2775,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -2882,7 +2801,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -2922,7 +2840,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -2955,7 +2872,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -2995,7 +2911,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3003,7 +2918,7 @@
                           <string>Interfaces :</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -3025,7 +2940,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3036,16 +2950,16 @@
                           <bool>true</bool>
                          </property>
                          <property name="movement">
-                          <enum>QListView::Static</enum>
+                          <enum>QListView::Movement::Static</enum>
                          </property>
                          <property name="flow">
-                          <enum>QListView::LeftToRight</enum>
+                          <enum>QListView::Flow::LeftToRight</enum>
                          </property>
                          <property name="isWrapping" stdset="0">
                           <bool>false</bool>
                          </property>
                          <property name="resizeMode">
-                          <enum>QListView::Fixed</enum>
+                          <enum>QListView::ResizeMode::Fixed</enum>
                          </property>
                          <property name="spacing">
                           <number>0</number>
@@ -3083,7 +2997,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3091,7 +3004,7 @@
                           <string>Description :</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                          <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -3119,7 +3032,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3142,7 +3054,7 @@
                <item>
                 <spacer name="verticalSpacer_2">
                  <property name="orientation">
-                  <enum>Qt::Vertical</enum>
+                  <enum>Qt::Orientation::Vertical</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
@@ -3185,7 +3097,7 @@
            <item>
             <widget class="QScrollArea" name="scrollArea_2">
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <property name="lineWidth">
               <number>0</number>
@@ -3199,7 +3111,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>786</width>
-                <height>474</height>
+                <height>548</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_22">
@@ -3215,7 +3127,6 @@
                   <font>
                    <family>Tahoma</family>
                    <pointsize>10</pointsize>
-                   <weight>75</weight>
                    <bold>true</bold>
                   </font>
                  </property>
@@ -3232,7 +3143,6 @@
                      <font>
                       <family>Tahoma</family>
                       <pointsize>10</pointsize>
-                      <weight>75</weight>
                       <bold>true</bold>
                      </font>
                     </property>
@@ -3242,7 +3152,7 @@
                     <property name="title">
                      <string>BRAS 1</string>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_12">
+                    <layout class="QVBoxLayout" name="verticalLayout_13">
                      <item>
                       <layout class="QHBoxLayout" name="horizontalLayout_39">
                        <item>
@@ -3269,7 +3179,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3303,7 +3212,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3333,7 +3241,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3354,7 +3261,7 @@
                           </font>
                          </property>
                          <property name="orientation">
-                          <enum>Qt::Horizontal</enum>
+                          <enum>Qt::Orientation::Horizontal</enum>
                          </property>
                          <property name="sizeHint" stdset="0">
                           <size>
@@ -3364,6 +3271,10 @@
                          </property>
                         </spacer>
                        </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_7">
                        <item>
                         <widget class="QLabel" name="b1a2Lbl">
                          <property name="minimumSize">
@@ -3382,7 +3293,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3412,7 +3322,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3423,6 +3332,19 @@
                           <string/>
                          </property>
                         </widget>
+                       </item>
+                       <item>
+                        <spacer name="horizontalSpacer_10">
+                         <property name="orientation">
+                          <enum>Qt::Orientation::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
                        </item>
                       </layout>
                      </item>
@@ -3435,7 +3357,6 @@
                      <font>
                       <family>Tahoma</family>
                       <pointsize>10</pointsize>
-                      <weight>75</weight>
                       <bold>true</bold>
                      </font>
                     </property>
@@ -3445,7 +3366,7 @@
                     <property name="title">
                      <string>BRAS 2</string>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_13">
+                    <layout class="QVBoxLayout" name="verticalLayout_12">
                      <item>
                       <layout class="QHBoxLayout" name="horizontalLayout_41">
                        <item>
@@ -3472,7 +3393,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3506,7 +3426,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3536,7 +3455,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3557,7 +3475,7 @@
                           </font>
                          </property>
                          <property name="orientation">
-                          <enum>Qt::Horizontal</enum>
+                          <enum>Qt::Orientation::Horizontal</enum>
                          </property>
                          <property name="sizeHint" stdset="0">
                           <size>
@@ -3567,6 +3485,10 @@
                          </property>
                         </spacer>
                        </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_6">
                        <item>
                         <widget class="QLabel" name="b2a2Lbl">
                          <property name="minimumSize">
@@ -3585,7 +3507,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3615,7 +3536,6 @@
                           <font>
                            <family>Tahoma</family>
                            <pointsize>10</pointsize>
-                           <weight>75</weight>
                            <bold>true</bold>
                           </font>
                          </property>
@@ -3626,6 +3546,19 @@
                           <string/>
                          </property>
                         </widget>
+                       </item>
+                       <item>
+                        <spacer name="horizontalSpacer_9">
+                         <property name="orientation">
+                          <enum>Qt::Orientation::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
                        </item>
                       </layout>
                      </item>
@@ -3644,7 +3577,6 @@
                      <font>
                       <family>Tahoma</family>
                       <pointsize>10</pointsize>
-                      <weight>50</weight>
                       <bold>false</bold>
                      </font>
                     </property>
@@ -3655,10 +3587,10 @@
                      <bool>true</bool>
                     </property>
                     <property name="selectionMode">
-                     <enum>QAbstractItemView::SingleSelection</enum>
+                     <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
                     </property>
                     <property name="selectionBehavior">
-                     <enum>QAbstractItemView::SelectRows</enum>
+                     <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
                     </property>
                    </widget>
                   </item>
@@ -3681,7 +3613,7 @@
         <x>0</x>
         <y>0</y>
         <width>822</width>
-        <height>333</height>
+        <height>334</height>
        </rect>
       </property>
       <attribute name="label">
@@ -3704,7 +3636,6 @@
          </property>
          <property name="font">
           <font>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -3719,7 +3650,7 @@
        <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -3744,7 +3675,7 @@
         </font>
        </property>
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -3781,7 +3712,6 @@
         <font>
          <family>Tahoma</family>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
