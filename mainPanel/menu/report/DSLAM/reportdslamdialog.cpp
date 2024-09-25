@@ -143,10 +143,9 @@ void ReportDSLAMDialog::fillForm()
     if(dbMan->dslamExistance(dslamId))
     {
         int exchId = ui->abbrCB->currentData().toInt();
+        singleAgg = dbMan->isSingleAggExchange(exchId);
         if(ui->typeCB->currentData().toInt() == 3)
             exchId = ui->siteCB->currentData().toInt();
-
-        singleAgg = dbMan->isSingleAggExchange(exchId);
 
         // fill
         fillFormDslamPlan();

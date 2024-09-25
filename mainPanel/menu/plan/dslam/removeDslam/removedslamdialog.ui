@@ -543,7 +543,7 @@
         <x>0</x>
         <y>0</y>
         <width>822</width>
-        <height>334</height>
+        <height>328</height>
        </rect>
       </property>
       <attribute name="label">
@@ -3600,7 +3600,7 @@
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>-60</y>
+                <y>0</y>
                 <width>786</width>
                 <height>548</height>
                </rect>
@@ -4104,7 +4104,7 @@
         <x>0</x>
         <y>0</y>
         <width>822</width>
-        <height>334</height>
+        <height>309</height>
        </rect>
       </property>
       <attribute name="label">
@@ -4154,6 +4154,19 @@
       </layout>
      </widget>
     </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_44">
