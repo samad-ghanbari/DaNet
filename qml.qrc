@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>mainPanel/menu/help/about/About.qml</file>
+    </qresource>
+</RCC>

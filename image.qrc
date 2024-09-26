@@ -82,5 +82,6 @@
         <file>Image/phone.png</file>
         <file>Image/unlink.png</file>
         <file>Image/systemNo.png</file>
+        <file>Image/bg.jpg</file>
     </qresource>
 </RCC>

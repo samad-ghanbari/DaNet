@@ -100,7 +100,7 @@
 #include "mainPanel/menu/profile/profiledialog.h"
 
 //help
-#include "mainPanel/menu/help/about/aboutdialog.h"
+#include "mainPanel/menu/help/about/aboutdialog2.h"
 #include "mainPanel/menu/help/recommendation/recommendationdialog.h"
 #include "mainPanel/menu/help/regexHelp/regexphelpdialog.h"
 
@@ -436,7 +436,6 @@ MainPanel::MainPanel(DanetDbMan *db, bool adminUser, const bool mainDB, QWidget 
     helpMenu->addAction(ui->actionRecommendation);
 
     connect(portHeaderView, SIGNAL(sectionsWidgetsSignal()), this, SLOT(portTVHeaderWidgetsChagedSlot()));
-
 }
 
 MainPanel::~MainPanel()
@@ -1242,7 +1241,8 @@ void MainPanel::on_actionRecommendation_triggered()
 
 void MainPanel::on_actionAbout_DaNet_triggered()
 {
-    AboutDialog aboutDialog(this);
+    //AboutDialog aboutDialog(this);
+    AboutDialog2 aboutDialog(this);
     aboutDialog.exec();
 }
 

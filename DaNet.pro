@@ -7,8 +7,35 @@
 # Build with Qt 5.12.10
 # Mysql Database version is 5.7
 
+# Deploy
+# Windows
+# windeployqt.exe c:\desktop\xx.exe
+# copy libmysql.dll from Qt\Qt5.10.1\5.10.1\mingw53_32\bin\libmysql.dll
+# open inno setup compiler...
+# go on and give .exe file and include the folder
+# target computer must have microsoft visual C++ redistributable package
+# Linux
+# https://github.com/probonopd/linuxdeployqt/releases
+# rename the release to linuxdeployqt and copy to /usr/share/bin
+# create folder for example danet and copy the binary named DaNet there.
+# copy the icon named danet.png to the folder
+# create danet.desktop file containing
+#
+# [Desktop Entry]
+# Type=Application
+# Name=DaNet
+# Exec=AppRun %F
+# Icon=danet
+# Comment=Data Network Planning
+# Terminal=true
+#
+# export PATH=/opt/Qt/5.12.10/gcc_64/bin/:$PATH
+# linuxdeployqt ./Danet -appimage
+#
 
-QT       += core gui sql printsupport xlsx
+
+
+QT       += core gui sql printsupport xlsx quick qml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -44,6 +71,7 @@ SOURCES += main.cpp \
     mainPanel/menu/admin/users/edituserdialog.cpp \
     mainPanel/menu/admin/users/removeuserdialog.cpp \
     mainPanel/menu/admin/users/usermandialog.cpp \
+    mainPanel/menu/help/about/aboutdialog2.cpp \
     mainPanel/menu/installation/exchangeSite/addexchangesitedialog.cpp \
     mainPanel/menu/installation/exchangeSite/editexchangesitedialog.cpp \
     mainPanel/menu/installation/exchangeSite/exchangesitemandialog.cpp \
@@ -329,6 +357,7 @@ HEADERS  += \
     mainPanel/menu/admin/users/edituserdialog.h \
     mainPanel/menu/admin/users/removeuserdialog.h \
     mainPanel/menu/admin/users/usermandialog.h \
+    mainPanel/menu/help/about/aboutdialog2.h \
     mainPanel/menu/installation/exchangeSite/addexchangesitedialog.h \
     mainPanel/menu/installation/exchangeSite/editexchangesitedialog.h \
     mainPanel/menu/installation/exchangeSite/exchangesitemandialog.h \
@@ -615,6 +644,7 @@ FORMS    += \
     mainPanel/menu/admin/users/edituserdialog.ui \
     mainPanel/menu/admin/users/removeuserdialog.ui \
     mainPanel/menu/admin/users/usermandialog.ui \
+    mainPanel/menu/help/about/aboutdialog2.ui \
     mainPanel/menu/installation/exchangeSite/addexchangesitedialog.ui \
     mainPanel/menu/installation/exchangeSite/editexchangesitedialog.ui \
     mainPanel/menu/installation/exchangeSite/exchangesitemandialog.ui \
@@ -876,5 +906,7 @@ RESOURCES += \
     configurations.qrc \
     image.qrc \
     font.qrc \
+    qml.qrc
 
 RC_ICONS = danet.ico
+
