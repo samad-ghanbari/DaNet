@@ -12,6 +12,7 @@
 # windeployqt.exe c:\desktop\xx.exe
 # D:\Source Codes\DaNet-Setup-2.4>windeployqt --release --qmldir "D:\Source Codes\DaNet" ./DaNet.exe
 # copy libmysql.dll from Qt\Qt5.10.1\5.10.1\mingw53_32\bin\libmysql.dll
+# replace dll Qt\Qt5.12.1\5.12.1\mingw53_32\bin\ if there is multiple Qt versions
 # open inno setup compiler...
 # go on and give .exe file and include the folder
 # target computer must have microsoft visual C++ redistributable package
