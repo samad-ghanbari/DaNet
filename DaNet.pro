@@ -10,10 +10,12 @@
 # Deploy
 # Windows
 # windeployqt.exe c:\desktop\xx.exe
+# D:\Source Codes\DaNet-Setup-2.4>windeployqt --release --qmldir "D:\Source Codes\DaNet" ./DaNet.exe
 # copy libmysql.dll from Qt\Qt5.10.1\5.10.1\mingw53_32\bin\libmysql.dll
 # open inno setup compiler...
 # go on and give .exe file and include the folder
 # target computer must have microsoft visual C++ redistributable package
+#
 # Linux
 # https://github.com/probonopd/linuxdeployqt/releases
 # rename the release to linuxdeployqt and copy to /usr/share/bin
@@ -22,16 +24,20 @@
 # create danet.desktop file containing
 #
 # [Desktop Entry]
+# Version=2.4.0
+# Encoding=UTF-8
 # Type=Application
 # Name=DaNet
-# Exec=AppRun %F
-# Icon=danet
-# Comment=Data Network Planning
-# Terminal=true
+# Comment=DaNet
+# Exec=/bin/DaNet/AppRun %f
+# Icon=/bin/DaNet/DaNet.ico
 #
 # export PATH=/opt/Qt/5.12.10/gcc_64/bin/:$PATH
 # linuxdeployqt ./Danet -appimage
-#
+# linuxdeployqt ./DaNet  -appimage -qmldir=/home/samad/share/programs/CPP/DaNet/
+# copy all files and folders to /usr/bin/DaNet/
+# locate appImage in /home/samad/.local/share/applications/DaNet.desktop
+
 
 
 

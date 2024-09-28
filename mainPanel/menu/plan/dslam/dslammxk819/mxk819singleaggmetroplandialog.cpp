@@ -50,30 +50,15 @@ Mxk819SingleAggMetroPlanDialog::Mxk819SingleAggMetroPlanDialog(QWidget *parent, 
 
     //CX600
     ui->cxCB->blockSignals(true);
+    int exceptMotherId = motherId;
+    int mid = dbMan->exchangeGR23Except(motherId);
+    if( mid != motherId)
+        exceptMotherId = mid;
+    mid = dbMan->exchangeKhvExcept(motherId);
+    if( mid != motherId)
+        exceptMotherId = mid;
 
-    if(motherId > -1) // site
-    {
-        //if GR2 GR3 set GR1
-        int m = dbMan->exchangeGR23Except(motherId);
-        query = dbMan->selectExchangeCx(ExchId, m);
-
-        //if h-kv set ms
-        m = dbMan->exchangeKhvExcept(motherId);
-        query = dbMan->selectExchangeCx(m);
-
-    }
-    else
-    { // exchange
-        //if GR2 GR3 set GR1
-        int e = dbMan->exchangeGR23Except(ExchId);
-        query = dbMan->selectExchangeCx(e);
-
-        //if h-kv set ms
-        int m = dbMan->exchangeKhvExcept(motherId);
-        query = dbMan->selectExchangeCx(m);
-
-    }
-
+    query = dbMan->selectExchangeCx(ExchId, exceptMotherId);
 
     //id , deviceName
     while(query->next())
