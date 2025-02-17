@@ -1,7 +1,7 @@
 
-./lib
+lib
 
-./build
+build
 
-./DaNet.pro.user
-./DaNet.pro.user*
+DaNet.pro.user
+DaNet.pro.user*
