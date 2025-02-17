@@ -1,7 +1,8 @@
 
-lib/database
+lib
 
 build
 
-DaNet.pro.user
-DaNet.pro.user*
+./DaNet.pro.user
+./DaNet.pro.user*
+
