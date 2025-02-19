@@ -120,14 +120,26 @@ ExchangeSiteManDialog::ExchangeSiteManDialog(QWidget *parent, DanetDbMan *db) :
 
     /////////////////////
 
-    ui->exchSiteTV->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(ui->exchSiteTV, SIGNAL(customContextMenuRequested(QPoint)),this,SLOT(contextMenuSlot(QPoint)));
+    QString dep = QString(DEPARTMENT);
+    if((dep.compare("tarahi") == 0))
+    {
+        ui->exchSiteTV->setContextMenuPolicy(Qt::CustomContextMenu);
+        connect(ui->exchSiteTV, SIGNAL(customContextMenuRequested(QPoint)),this,SLOT(contextMenuSlot(QPoint)));
 
-    contextMenu.addAction(ui->actionEditExchangeSite);
-    contextMenu.addSeparator();
-    contextMenu.addAction(ui->actionRemoveExchangeSite);
-    contextMenu.addSeparator();
-    contextMenu.addAction(ui->actionExport_PDF);
+        contextMenu.addAction(ui->actionEditExchangeSite);
+        contextMenu.addSeparator();
+        contextMenu.addAction(ui->actionRemoveExchangeSite);
+        contextMenu.addSeparator();
+        contextMenu.addAction(ui->actionExport_PDF);
+
+    }
+    else
+    {
+        ui->actionEditExchangeSite->setEnabled(false);
+        ui->actionRemoveExchangeSite->setEnabled(false);
+        ui->addBtn->setEnabled(false);
+    }
+
 }
 
 ExchangeSiteManDialog::~ExchangeSiteManDialog()

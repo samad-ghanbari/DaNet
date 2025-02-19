@@ -436,6 +436,78 @@ MainPanel::MainPanel(DanetDbMan *db, bool adminUser, const bool mainDB, QWidget 
     helpMenu->addAction(ui->actionRecommendation);
 
     connect(portHeaderView, SIGNAL(sectionsWidgetsSignal()), this, SLOT(portTVHeaderWidgetsChagedSlot()));
+
+    QString dep = QString(DEPARTMENT);
+    if(!(dep.compare("tarahi") == 0))
+    {
+
+        ui->actionAccessBRASConfig->setEnabled(false);
+        ui->actionAccessDepDoubleSwitchPlan->setEnabled(false);
+        ui->actionAccessDepSingleSwitchPlan->setEnabled(false);
+        ui->actionAdminCards->setEnabled(false);
+        ui->actionAdminDevices->setEnabled(false);
+        ui->actionAdminUsers->setEnabled(false);
+        ui->actionAssignInterface->setEnabled(false);
+        ui->actionAssign_ODF->setEnabled(false);
+        ui->actionBRAS_NAS_IP->setEnabled(false);
+        ui->actionCardsStat->setEnabled(false);
+        ui->actionChange_Interface_Type->setEnabled(false);
+        ui->actionChange_Module->setEnabled(false);
+        ui->actionChange_ODF->setEnabled(false);
+        ui->actionClear_LOG->setEnabled(false);
+        ui->actionCommercial_Reserved_Interfaces->setEnabled(false);
+        ui->actionCommodity->setEnabled(false);
+        ui->actionConnection->setEnabled(false);
+        ui->actionDSLAMPlan->setEnabled(false);
+        ui->actionDetach_ODF->setEnabled(false);
+        ui->actionDeviceCount->setEnabled(false);
+        ui->actionDeviceInstall->setEnabled(false);
+        ui->actionDevices_Status->setEnabled(false);
+        ui->actionEmptyInterface->setEnabled(false);
+        ui->actionExchanges_Sites_stat->setEnabled(false);
+        ui->actionExport_Excel->setEnabled(false);
+        ui->actionIPv4Plan->setEnabled(false);
+        ui->actionIPv6_Plan->setEnabled(false);
+        ui->actionInstallCard->setEnabled(false);
+        ui->actionInterface_Type->setEnabled(false);
+        ui->actionLetters->setEnabled(false);
+        ui->actionLink_Batch_to_ODF->setEnabled(false);
+        ui->actionLocal_New_DSLAM_Plan->setEnabled(false);
+        ui->actionLom->setEnabled(false);
+        ui->actionManageDevice->setEnabled(false);
+        ui->actionModifyInterface->setEnabled(false);
+        ui->actionNew_SitePlan->setEnabled(false);
+        ui->actionPVC_Reference->setEnabled(false);
+        ui->actionPortsStat->setEnabled(false);
+        ui->actionPurchase_Management->setEnabled(false);
+        ui->actionRD_Reference->setEnabled(false);
+        ui->actionRemove_DSLAM->setEnabled(false);
+        ui->actionReportDSLAM->setEnabled(true);
+        ui->actionReportExchange_Devices->setEnabled(true);
+        ui->actionReportExchange_Sites->setEnabled(true);
+        ui->actionReportFloorPlan->setEnabled(false);
+        ui->actionReportIP_Pool->setEnabled(true);
+        ui->actionReportInterfaces->setEnabled(true);
+        ui->actionReportNetwork_Pool->setEnabled(true);
+        ui->actionReportSubnet_Pool->setEnabled(true);
+        ui->actionReportTotal_DSLAM_Plan->setEnabled(true);
+        ui->actionReservePortToCommercialDep->setEnabled(false);
+        ui->actionReserve_To_Commercial_Dep->setEnabled(false);
+        ui->actionSBCIPLoopBackPlan->setEnabled(false);
+        ui->actionSFP_Modules->setEnabled(false);
+        ui->actionSaloon->setEnabled(false);
+        ui->actionUninstalled_Commodities->setEnabled(false);
+        ui->actionUnlik_Batch_ODF->setEnabled(false);
+        ui->actionVLAN_Reference->setEnabled(false);
+        ui->actionVSI_Reference->setEnabled(false);
+        ui->actionRecent_LOG->setEnabled(false);
+        ui->actionSystemNo->setEnabled(false);
+        ui->actionReportIP_Pool->setEnabled(false);
+        ui->actionReportNetwork_Pool->setEnabled(false);
+        ui->actionReportSubnet_Pool->setEnabled(false);
+
+
+    }
 }
 
 MainPanel::~MainPanel()

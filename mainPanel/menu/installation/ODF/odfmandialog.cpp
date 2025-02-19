@@ -73,20 +73,24 @@ OdfManDialog::OdfManDialog(QWidget *parent, DanetDbMan *db) :
     ui->posTV->verticalHeader()->hide();
     ui->posTV->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    // context menu ODF
-    ui->odfTV->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(ui->odfTV, SIGNAL(customContextMenuRequested(QPoint)),this,SLOT(odfContextMenuSlot(QPoint)));
-    connect(ui->odfTV, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(odfTV2ClickSlot(QModelIndex)));
+    QString dep = QString(DEPARTMENT);
+    if((dep.compare("tarahi") == 0))
+    {
+        // context menu ODF
+        ui->odfTV->setContextMenuPolicy(Qt::CustomContextMenu);
+        connect(ui->odfTV, SIGNAL(customContextMenuRequested(QPoint)),this,SLOT(odfContextMenuSlot(QPoint)));
+        connect(ui->odfTV, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(odfTV2ClickSlot(QModelIndex)));
 
-    odfContextMenu.addAction(ui->actionEditODF);
-    odfContextMenu.addSeparator();
-    odfContextMenu.addAction(ui->actionRemoveODF);
+        odfContextMenu.addAction(ui->actionEditODF);
+        odfContextMenu.addSeparator();
+        odfContextMenu.addAction(ui->actionRemoveODF);
 
-    // context menu POS
-    ui->posTV->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(ui->posTV, SIGNAL(customContextMenuRequested(QPoint)),this,SLOT(posContextMenuSlot(QPoint)));
-    posContextMenu.addAction(ui->actionRemovePOS);
-    posContextMenu.addAction(ui->actionChangePosNo);
+        // context menu POS
+        ui->posTV->setContextMenuPolicy(Qt::CustomContextMenu);
+        connect(ui->posTV, SIGNAL(customContextMenuRequested(QPoint)),this,SLOT(posContextMenuSlot(QPoint)));
+        posContextMenu.addAction(ui->actionRemovePOS);
+        posContextMenu.addAction(ui->actionChangePosNo);
+    }
 
     int workingArea = dbMan->getLoggedInDefaultArea();
     ui->areaCB->setCurrentIndex(ui->areaCB->findData(workingArea));
@@ -141,6 +145,13 @@ void OdfManDialog::fillOdfTV(int exchSiteId, int saloon)
         ui->posTab->setEnabled(false);
         ui->odfTV->setEnabled(false);
     }
+
+    QString dep = QString(DEPARTMENT);
+    if(!(dep.compare("tarahi") == 0))
+    {
+        ui->odfAddBtn->setEnabled(false);
+        ui->posAddBtn->setEnabled(false);
+    }
 }
 
 void OdfManDialog::fillPosTV(int i)
@@ -153,6 +164,13 @@ void OdfManDialog::fillPosTV(int i)
     ui->posTV->hideColumn(0);
     ui->posTV->hideColumn(1);
     posModel->setHeaderData(2, Qt::Horizontal,"POS NO");
+
+    QString dep = QString(DEPARTMENT);
+    if(!(dep.compare("tarahi") == 0))
+    {
+        ui->odfAddBtn->setEnabled(false);
+        ui->posAddBtn->setEnabled(false);
+    }
 }
 
 void OdfManDialog::removeRefreshSlot(int i)
@@ -535,6 +553,7 @@ void OdfManDialog::on_odfNoCB_currentIndexChanged(int index)
 
 void OdfManDialog::on_odfAddBtn_clicked()
 {
+
     int exchangeId;
     if(ui->typeCB->currentIndex() == 0)//exchange
         exchangeId = ui->abbrCB->currentData().toInt();

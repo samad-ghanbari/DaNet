@@ -71,8 +71,8 @@ TEMPLATE = app
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS \
             DANET_VER=\\\"2.5.0\\\" \
-            ADMIN=\\\"samad\\\" \
-            DEPARTMENT=\\\"tarahi\\\"
+            ADMIN=\\\"samad1\\\" \
+            DEPARTMENT=\\\"view\\\"
 
 VERSION = $${DANET_VER}
 
