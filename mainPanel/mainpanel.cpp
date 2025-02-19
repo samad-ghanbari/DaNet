@@ -505,7 +505,7 @@ MainPanel::MainPanel(DanetDbMan *db, bool adminUser, const bool mainDB, QWidget 
         ui->actionReportIP_Pool->setEnabled(false);
         ui->actionReportNetwork_Pool->setEnabled(false);
         ui->actionReportSubnet_Pool->setEnabled(false);
-
+        ui->actionReportTotal_DSLAM_Plan->setEnabled(false);
 
     }
 }

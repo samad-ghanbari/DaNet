@@ -48,6 +48,10 @@ TelephonesDialog::TelephonesDialog(DanetDbMan *db, QWidget *parent) :
     fillTV();
     connect(header, SIGNAL(sectionsWidgetsSignal()), this, SLOT(headerWidgetsChagedSlot()));
     ///////////////////// context
+    ///     QString dep = QString(DEPARTMENT);
+    if((dep.compare("tarahi") == 0))
+    {
+
     ui->TV->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->TV, SIGNAL(customContextMenuRequested(QPoint)),this,SLOT(contextMenuSlot(QPoint)));
     connect(ui->TV, SIGNAL(doubleClicked(QModelIndex)),this,SLOT(doubleClickedSlot(QModelIndex)));
@@ -56,7 +60,9 @@ TelephonesDialog::TelephonesDialog(DanetDbMan *db, QWidget *parent) :
     contextMenu.addAction(ui->actionEdit);
     contextMenu.addSeparator();
     contextMenu.addAction(ui->actionRemove);
-
+    }
+    else
+        ui->addBtn->setEnabled(false);
 }
 
 TelephonesDialog::~TelephonesDialog()

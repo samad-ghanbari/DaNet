@@ -138,17 +138,22 @@ ODFManagementDialog::ODFManagementDialog(QWidget *parent, DanetDbMan *db, const 
     ui->odfCB->setEnabled(false);
     ui->posCB->setEnabled(false);
 
-    // context menu ODF
-    ui->pinTV->setContextMenuPolicy(Qt::CustomContextMenu);
-    if(mainDb)
+    QString dep = QString(DEPARTMENT);
+    if((dep.compare("tarahi") == 0))
     {
-        connect(ui->pinTV, SIGNAL(customContextMenuRequested(QPoint)),this,SLOT(contextMenuSlot(QPoint)));
-        connect(ui->pinTV, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(pinTV2ClickSlot(QModelIndex)));
+        // context menu ODF
+        ui->pinTV->setContextMenuPolicy(Qt::CustomContextMenu);
+        if(mainDb)
+        {
+            connect(ui->pinTV, SIGNAL(customContextMenuRequested(QPoint)),this,SLOT(contextMenuSlot(QPoint)));
+            connect(ui->pinTV, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(pinTV2ClickSlot(QModelIndex)));
+        }
+
+        contextMenu.addAction(ui->actionAssignODFPin);
+        contextMenu.addAction(ui->actionEditODFPin);
+        contextMenu.addAction(ui->actionDepleteODFPin);
     }
 
-    contextMenu.addAction(ui->actionAssignODFPin);
-    contextMenu.addAction(ui->actionEditODFPin);
-    contextMenu.addAction(ui->actionDepleteODFPin);
 
     ui->areaCB->setCurrentIndex(ui->areaCB->findData(Area));
 }
@@ -485,6 +490,11 @@ void ODFManagementDialog::on_saloonCB_currentIndexChanged(int index)
 
 void ODFManagementDialog::contextMenuSlot(QPoint ptr)
 {
+    QString dep = QString(DEPARTMENT);
+    if(!(dep.compare("tarahi") == 0))
+    {
+        return;
+    }
     clickedIndex = ui->pinTV->indexAt(ptr);
     clickedRow = clickedIndex.row();
     //`id`,`port_id`,`local_device`,`local_label`,`pin_no`,`remote`,`remote_label`
@@ -529,6 +539,11 @@ void ODFManagementDialog::contextMenuSlot(QPoint ptr)
 
 void ODFManagementDialog::pinTV2ClickSlot(QModelIndex ind)
 {
+    QString dep = QString(DEPARTMENT);
+    if(!(dep.compare("tarahi") == 0))
+    {
+        return;
+    }
     clickedIndex = ind;
     clickedIndex = clickedIndex.sibling(clickedIndex.row(), 1); // portId
     ind = ind.sibling(ind.row(), 0); // id
