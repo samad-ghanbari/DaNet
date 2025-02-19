@@ -7,6 +7,21 @@
 # Build with Qt 5.12.10
 # Mysql Database version is 5.7
 
+# install by sourse 
+# https://download.qt.io/archive/qt/5.12/5.12.10/single/
+# sudo apt-get install build-essential cmake qtbase5-dev qtchooser qt5-qmake qt5-default libqt5svg-dev libqt5webkit5-dev qttools5-dev
+# sudo apt-get install libfontconfig1-dev libxcb-xinerama0-dev libxrender-dev libxrandr-dev libxkbcommon-dev
+
+#./configure -prefix /opt/Qt/5.12.10
+#./configure -prefix /opt/Qt/5.12.10    -skip qtwebengine
+
+# make -j$(nproc)
+#	This will use all available CPU cores to speed up the build process.
+# sudo make install
+
+# echo "export PATH=/opt/Qt/5.12.10/bin:\$PATH" >> ~/.bashrc
+# source ~/.bashrc
+
 # Deploy
 # Windows
 # windeployqt.exe c:\desktop\xx.exe
@@ -55,7 +70,7 @@ TEMPLATE = app
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS \
-            DANET_VER=\\\"2.4.0\\\" \
+            DANET_VER=\\\"2.5.0\\\" \
             ADMIN=\\\"samad\\\" \
             DEPARTMENT=\\\"tarahi\\\"
 

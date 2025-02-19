@@ -1068,7 +1068,7 @@ void ReportTotalDSLAMPlanDialog::on_okBtn_clicked()
         //bool p = (portMap.count() > 0)? false : true;
         bool n = (nmsMap.count() == 2)? false : true;
         if(agg1List.count() < 6)
-            agg1List <<" "<<" "<<" "<<" ";
+            agg1List <<""<<""<<""<<"" << "" <<"";
 
         if(agg2List.count() < 4)
             agg2List <<""<<""<<""<<"";
