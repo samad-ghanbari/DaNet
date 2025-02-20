@@ -33,7 +33,8 @@
 # target computer must have microsoft visual C++ redistributable package
 #
 # Linux
-# https://github.com/probonopd/linuxdeployqt/releases
+# download version 5
+# https://github.com/probonopd/linuxdeployqt/releases/tag/5
 # rename the release to linuxdeployqt and copy to /usr/share/bin
 # create folder for example danet and copy the binary named DaNet there.
 # copy the icon named danet.png to the folder
@@ -51,6 +52,7 @@
 # export PATH=/opt/Qt/5.12.10/gcc_64/bin/:$PATH
 # linuxdeployqt ./Danet -appimage
 # linuxdeployqt ./DaNet  -appimage -qmldir=/home/samad/share/programs/CPP/DaNet/
+# /usr/bin/linuxdeployqt ./DaNet -appimage -qmldir=/home/samad/share/programs/Cpp/Qt/DaNet/
 # copy all files and folders to /usr/bin/DaNet/
 # locate appImage in /home/samad/.local/share/applications/DaNet.desktop
 
