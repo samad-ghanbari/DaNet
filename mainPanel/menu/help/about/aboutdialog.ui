@@ -126,7 +126,6 @@
         <font>
          <family>Tahoma</family>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -134,7 +133,7 @@
         <string notr="true">color: rgb(160, 60, 100);</string>
        </property>
        <property name="text">
-        <string>DaNet Version 2.3.0</string>
+        <string>DaNet Version 2.5.1</string>
        </property>
       </widget>
      </item>
@@ -210,7 +209,6 @@
         <font>
          <family>Tahoma</family>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -255,7 +253,6 @@ All rights reserved.</string>
         <font>
          <family>Tahoma</family>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -311,7 +308,6 @@ Ghanbari.Samad@Gmail.com</string>
         <font>
          <family>Tahoma</family>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>

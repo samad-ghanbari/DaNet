@@ -48,7 +48,7 @@ TelephonesDialog::TelephonesDialog(DanetDbMan *db, QWidget *parent) :
     fillTV();
     connect(header, SIGNAL(sectionsWidgetsSignal()), this, SLOT(headerWidgetsChagedSlot()));
     ///////////////////// context
-    ///     QString dep = QString(DEPARTMENT);
+    QString dep = QString(DEPARTMENT);
     if((dep.compare("tarahi") == 0))
     {
 

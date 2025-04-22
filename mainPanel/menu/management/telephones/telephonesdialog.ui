@@ -47,8 +47,8 @@
        </property>
        <property name="font">
         <font>
+         <family>Ubuntu</family>
          <pointsize>11</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -120,6 +120,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="addBtn">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="minimumSize">
         <size>
          <width>40</width>
