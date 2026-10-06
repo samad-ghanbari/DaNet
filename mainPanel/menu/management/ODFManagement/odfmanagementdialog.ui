@@ -59,7 +59,6 @@
               <font>
                <family>Tahoma</family>
                <pointsize>10</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -92,7 +91,6 @@
               <font>
                <family>Tahoma</family>
                <pointsize>10</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -123,7 +121,6 @@
               <font>
                <family>Tahoma</family>
                <pointsize>10</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -159,7 +156,6 @@
               <font>
                <family>Tahoma</family>
                <pointsize>10</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -190,7 +186,6 @@
               <font>
                <family>Tahoma</family>
                <pointsize>10</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -226,7 +221,6 @@
               <font>
                <family>Tahoma</family>
                <pointsize>10</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -323,7 +317,6 @@
                <font>
                 <family>Tahoma</family>
                 <pointsize>10</pointsize>
-                <weight>75</weight>
                 <bold>true</bold>
                </font>
               </property>
@@ -359,7 +352,6 @@
                <font>
                 <family>Tahoma</family>
                 <pointsize>10</pointsize>
-                <weight>75</weight>
                 <bold>true</bold>
                </font>
               </property>
@@ -412,7 +404,6 @@
             <font>
              <family>Tahoma</family>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -448,7 +439,6 @@
             <font>
              <family>Tahoma</family>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -498,7 +488,6 @@
             <font>
              <family>Tahoma</family>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -540,7 +529,6 @@
             <font>
              <family>Tahoma</family>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -567,7 +555,6 @@
             <font>
              <family>Tahoma</family>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -609,7 +596,6 @@
             <font>
              <family>Tahoma</family>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -636,7 +622,6 @@
             <font>
              <family>Tahoma</family>
              <pointsize>10</pointsize>
-             <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
@@ -710,7 +695,6 @@
       <font>
        <family>Tahoma</family>
        <pointsize>11</pointsize>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -760,6 +744,33 @@
    </property>
    <property name="toolTip">
     <string>Edit ODF PIN</string>
+   </property>
+  </action>
+  <action name="actionConvert_To_BiDi">
+   <property name="icon">
+    <iconset resource="../../../../image.qrc">
+     <normaloff>:/Image/BiDi.png</normaloff>:/Image/BiDi.png</iconset>
+   </property>
+   <property name="text">
+    <string>Convert To BiDi</string>
+   </property>
+   <property name="toolTip">
+    <string>Convert To BiDi</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionConvert_To_Duplex">
+   <property name="icon">
+    <iconset resource="../../../../image.qrc">
+     <normaloff>:/Image/Duplex.png</normaloff>:/Image/Duplex.png</iconset>
+   </property>
+   <property name="text">
+    <string>Convert To Duplex</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
    </property>
   </action>
  </widget>

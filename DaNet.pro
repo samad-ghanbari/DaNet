@@ -72,7 +72,7 @@ TEMPLATE = app
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS \
-            DANET_VER=\\\"2.5.1\\\" \
+            DANET_VER=\\\"2.6.0\\\" \
             ADMIN=\\\"samad\\\" \
             DEPARTMENT=\\\"tarahi\\\"
             #DEPARTMENT=\\\"view\\\"
@@ -124,6 +124,8 @@ SOURCES += main.cpp \
     mainPanel/menu/management/DeviceManagement/editvlandialog.cpp \
     mainPanel/menu/management/DeviceManagement/editethertrunkdialog.cpp \
     mainPanel/menu/management/DeviceManagement/devicemanagementdialog.cpp \
+    mainPanel/menu/management/ODFManagement/converttobidi.cpp \
+    mainPanel/menu/management/ODFManagement/converttoduplex.cpp \
     mainPanel/menu/management/ODFManagement/odfmanagementdialog.cpp \
     mainPanel/menu/management/ODFManagement/assignodfpindialog.cpp \
     mainPanel/menu/management/ODFManagement/editodfpindialog.cpp \
@@ -410,6 +412,8 @@ HEADERS  += \
     mainPanel/menu/management/DeviceManagement/editvlandialog.h \
     mainPanel/menu/management/DeviceManagement/editethertrunkdialog.h \
     mainPanel/menu/management/DeviceManagement/devicemanagementdialog.h \
+    mainPanel/menu/management/ODFManagement/converttobidi.h \
+    mainPanel/menu/management/ODFManagement/converttoduplex.h \
     mainPanel/menu/management/ODFManagement/odfmanagementdialog.h \
     lib/mapmodel.h \
     lib/centeralignedmodel.h \
@@ -697,6 +701,8 @@ FORMS    += \
     mainPanel/menu/management/DeviceManagement/editvlandialog.ui \
     mainPanel/menu/management/DeviceManagement/editethertrunkdialog.ui \
     mainPanel/menu/management/DeviceManagement/devicemanagementdialog.ui \
+    mainPanel/menu/management/ODFManagement/converttobidi.ui \
+    mainPanel/menu/management/ODFManagement/converttoduplex.ui \
     mainPanel/menu/management/ODFManagement/odfmanagementdialog.ui \
     mainPanel/menu/management/ODFManagement/assignodfpindialog.ui \
     mainPanel/menu/management/ODFManagement/editodfpindialog.ui \

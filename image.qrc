@@ -83,5 +83,7 @@
         <file>Image/unlink.png</file>
         <file>Image/systemNo.png</file>
         <file>Image/bg.jpg</file>
+        <file>Image/BiDi.png</file>
+        <file>Image/Duplex.png</file>
     </qresource>
 </RCC>

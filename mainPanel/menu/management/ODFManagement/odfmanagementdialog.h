@@ -38,6 +38,10 @@ private slots:
     void on_actionEditODFPin_triggered();
 
 
+    void on_actionConvert_To_BiDi_triggered();
+
+    void on_actionConvert_To_Duplex_triggered();
+
 private:
     Ui::ODFManagementDialog *ui;
     DanetDbMan *dbMan;
@@ -50,7 +54,7 @@ private:
     //`id`,`port_id`,`local_device`,`local_label`,`pin_no`,`remote`,`remote_label`
     int clickedRow,clickedPinId, clickedPortId;
     QString clickedLocalDevice, clickedLocalLabel,clickedPinNo,
-        clickedRemote, clickedRemoteLabel;
+        clickedRemote, clickedRemoteLabel, clickedDuplex;
 
     bool SEARCH_FLAG;
     const int abbrId,odfId,posId,pinId;

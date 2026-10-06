@@ -9,6 +9,8 @@
 #include "mainPanel/menu/management/ODFManagement/assignodfpindialog.h"
 #include "mainPanel/menu/management/ODFManagement/editodfpindialog.h"
 #include "mainPanel/menu/management/ODFManagement/depleteodfpindialog.h"
+#include "mainPanel/menu/management/ODFManagement/converttobidi.h"
+#include "mainPanel/menu/management/ODFManagement/converttoduplex.h"
 
 ODFManagementDialog::ODFManagementDialog(QWidget *parent, DanetDbMan *db) :
     QDialog(parent),
@@ -26,7 +28,7 @@ ODFManagementDialog::ODFManagementDialog(QWidget *parent, DanetDbMan *db) :
     saloon = -1;
     SEARCH_FLAG = false;
 
-    tableModel->setSpecificColumn(4);
+    tableModel->setSpecificColumn(5);
 
     ui->pinTV->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->pinTV->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
@@ -71,6 +73,9 @@ ODFManagementDialog::ODFManagementDialog(QWidget *parent, DanetDbMan *db) :
     contextMenu.addAction(ui->actionAssignODFPin);
     contextMenu.addAction(ui->actionEditODFPin);
     contextMenu.addAction(ui->actionDepleteODFPin);
+    contextMenu.addSeparator();
+    contextMenu.addAction(ui->actionConvert_To_BiDi);
+    contextMenu.addAction(ui->actionConvert_To_Duplex);
 
     int workingArea = dbMan->getLoggedInDefaultArea();
     ui->areaCB->setCurrentIndex(ui->areaCB->findData(workingArea));
@@ -101,7 +106,7 @@ ODFManagementDialog::ODFManagementDialog(QWidget *parent, DanetDbMan *db, const 
     exchId = -1;
     siteId = -1;
 
-    tableModel->setSpecificColumn(4);
+    tableModel->setSpecificColumn(5);
 
     ui->pinTV->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->pinTV->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
@@ -152,6 +157,9 @@ ODFManagementDialog::ODFManagementDialog(QWidget *parent, DanetDbMan *db, const 
         contextMenu.addAction(ui->actionAssignODFPin);
         contextMenu.addAction(ui->actionEditODFPin);
         contextMenu.addAction(ui->actionDepleteODFPin);
+        contextMenu.addSeparator();
+        contextMenu.addAction(ui->actionConvert_To_BiDi);
+        contextMenu.addAction(ui->actionConvert_To_Duplex);
     }
 
 
@@ -168,15 +176,16 @@ ODFManagementDialog::~ODFManagementDialog()
 void ODFManagementDialog::fillTable(int posId)
 {
     QSqlQuery *query = dbMan->selectPin(posId);
-    //  `id`,`port_id`,`local_device`,`local_label`,`pin_no`,`remote`,`remote_label`
+    //  `id`,`port_id`,`local_device`,`local_label`,`duplex`,`pin_no`,`remote`,`remote_label`
     tableModel->setQuery(*query);
     ui->pinTV->hideColumn(0);
     ui->pinTV->hideColumn(1);
     tableModel->setHeaderData(2,Qt::Horizontal,"Local Device");
     tableModel->setHeaderData(3,Qt::Horizontal,"Local Label");
-    tableModel->setHeaderData(4,Qt::Horizontal,"PIN No");
-    tableModel->setHeaderData(5,Qt::Horizontal,"Remote");
-    tableModel->setHeaderData(6,Qt::Horizontal,"Remote Label");
+    tableModel->setHeaderData(4,Qt::Horizontal,"Duplex/BiDi");
+    tableModel->setHeaderData(5,Qt::Horizontal,"PIN No");
+    tableModel->setHeaderData(6,Qt::Horizontal,"Remote");
+    tableModel->setHeaderData(7,Qt::Horizontal,"Remote Label");
 }
 
 void ODFManagementDialog::refreshSlot(int done)
@@ -512,11 +521,13 @@ void ODFManagementDialog::contextMenuSlot(QPoint ptr)
         clickedLocalDevice = tableModel->data(clickedIndex).toString();
         clickedIndex = clickedIndex.sibling(clickedIndex.row(), 3); // local label
         clickedLocalLabel = tableModel->data(clickedIndex).toString();
-        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 4); // pin no
+        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 4); // duplex
+        clickedDuplex = tableModel->data(clickedIndex).toString();
+        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 5); // pin no
         clickedPinNo = tableModel->data(clickedIndex).toString();
-        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 5); // remote
+        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 6); // remote
         clickedRemote = tableModel->data(clickedIndex).toString();
-        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 6); // remote label
+        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 7); // remote label
         clickedRemoteLabel = tableModel->data(clickedIndex).toString();
 
 
@@ -533,6 +544,16 @@ void ODFManagementDialog::contextMenuSlot(QPoint ptr)
             ui->actionDepleteODFPin->setEnabled(true);
         }
 
+        if(clickedDuplex.compare("duplex", Qt::CaseInsensitive) == 0)
+        {
+            ui->actionConvert_To_Duplex->setEnabled(false);
+            ui->actionConvert_To_BiDi->setEnabled(true);
+        }
+        else
+        {
+            ui->actionConvert_To_Duplex->setEnabled(true);
+            ui->actionConvert_To_BiDi->setEnabled(false);
+        }
         contextMenu.popup(ui->pinTV->mapToGlobal(ptr));
     }
 }
@@ -558,11 +579,13 @@ void ODFManagementDialog::pinTV2ClickSlot(QModelIndex ind)
         clickedLocalDevice = tableModel->data(clickedIndex).toString();
         clickedIndex = clickedIndex.sibling(clickedIndex.row(), 3); // local label
         clickedLocalLabel = tableModel->data(clickedIndex).toString();
-        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 4); // pin no
+        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 4); // duplex
+        clickedDuplex = tableModel->data(clickedIndex).toString();
+        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 5); // pin no
         clickedPinNo = tableModel->data(clickedIndex).toString();
-        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 5); // remote
+        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 6); // remote
         clickedRemote = tableModel->data(clickedIndex).toString();
-        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 6); // remote label
+        clickedIndex = clickedIndex.sibling(clickedIndex.row(), 7); // remote label
         clickedRemoteLabel = tableModel->data(clickedIndex).toString();
 
 
@@ -682,3 +705,32 @@ void ODFManagementDialog::on_actionEditODFPin_triggered()
     connect(editOdfPinDialog, SIGNAL(finished(int)), this, SLOT(refreshSlot(int)));
     editOdfPinDialog->show();
 }
+
+void ODFManagementDialog::on_actionConvert_To_BiDi_triggered()
+{
+    if(clickedDuplex.compare("duplex", Qt::CaseInsensitive) == 0)
+    {
+        QString exch = ui->areaCB->currentText() + "-"+ui->abbrCB->currentText();
+        if(ui->typeCB->currentData().toInt() == 3)//site
+            exch = exch + "-"+ui->siteCB->currentText();
+        QString saloon = ui->saloonCB->currentText();
+        QString odf = ui->odfCB->currentText();
+        QString pos = ui->posCB->currentText();
+
+
+
+        ConvertToBiDi *convertToBidi = new ConvertToBiDi(this,dbMan,clickedPinId,exch,saloon,odf, pos, clickedPinNo);
+        convertToBidi->setAttribute(Qt::WA_DeleteOnClose);
+        connect(convertToBidi, SIGNAL(finished(int)), this, SLOT(refreshSlot(int)));
+        convertToBidi->show();
+    }
+
+}
+
+
+void ODFManagementDialog::on_actionConvert_To_Duplex_triggered()
+{
+    ConvertToDuplex *convertToDuplex = new ConvertToDuplex(this);
+    convertToDuplex->show();
+}
+
