@@ -11,6 +11,7 @@ ConvertToBiDi::ConvertToBiDi(QWidget *parent, DanetDbMan *db, const int PinId, c
 {
     ui->setupUi(this);
     ui->confirmChB->setChecked(false);
+    ui->okBtn->setEnabled(false);
     ui->abbrLbl->setText(exch);
     ui->saloonLbl->setText(saloon);
     QString currentDuplex = odf+" _ "+pos+" _ "+pinNo;

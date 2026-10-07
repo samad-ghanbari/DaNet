@@ -730,7 +730,20 @@ void ODFManagementDialog::on_actionConvert_To_BiDi_triggered()
 
 void ODFManagementDialog::on_actionConvert_To_Duplex_triggered()
 {
-    ConvertToDuplex *convertToDuplex = new ConvertToDuplex(this);
-    convertToDuplex->show();
+    if(clickedDuplex.compare("bidi", Qt::CaseInsensitive) == 0)
+    {
+        QString exch = ui->areaCB->currentText() + "-"+ui->abbrCB->currentText();
+        if(ui->typeCB->currentData().toInt() == 3)//site
+            exch = exch + "-"+ui->siteCB->currentText();
+        QString saloon = ui->saloonCB->currentText();
+        QString odf = ui->odfCB->currentText();
+        QString pos = ui->posCB->currentText();
+
+
+        ConvertToDuplex *convertToDuplex = new ConvertToDuplex(this,dbMan,clickedPinId,exch,saloon,odf, pos, clickedPinNo);
+        convertToDuplex->setAttribute(Qt::WA_DeleteOnClose);
+        connect(convertToDuplex, SIGNAL(finished(int)), this, SLOT(refreshSlot(int)));
+        convertToDuplex->show();
+    }
 }
 
