@@ -127,7 +127,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <property name="font">
@@ -1130,6 +1130,30 @@
    </property>
    <property name="toolTip">
     <string>System No</string>
+   </property>
+  </action>
+  <action name="actionConvert_to_Duplex">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/Duplex.png</normaloff>:/Image/Duplex.png</iconset>
+   </property>
+   <property name="text">
+    <string>Convert to Duplex</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionConvert_to_BiDi">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/Image/BiDi.png</normaloff>:/Image/BiDi.png</iconset>
+   </property>
+   <property name="text">
+    <string>Convert to BiDi</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
    </property>
   </action>
  </widget>

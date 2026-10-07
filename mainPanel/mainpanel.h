@@ -122,6 +122,10 @@ private slots:
 
     void on_actionSystemNo_triggered();
 
+    void on_actionConvert_to_Duplex_triggered();
+
+    void on_actionConvert_to_BiDi_triggered();
+
 private:
     Ui::MainPanel *ui;
     DanetDbMan *dbMan;

@@ -104,6 +104,11 @@
 #include "mainPanel/menu/help/recommendation/recommendationdialog.h"
 #include "mainPanel/menu/help/regexHelp/regexphelpdialog.h"
 
+
+// bidi - duplex
+#include "mainPanel/menu/management/ODFManagement/converttobidi.h"
+#include "mainPanel/menu/management/ODFManagement/converttoduplex.h"
+
 // table index
 #define INT_ID 0
 #define EXCHANGE_ID 1
@@ -266,6 +271,8 @@ MainPanel::MainPanel(DanetDbMan *db, bool adminUser, const bool mainDB, QWidget 
         portContextMenu.addAction(ui->actionChange_ODF);
         portContextMenu.addAction(ui->actionAssign_ODF);
         portContextMenu.addAction(ui->actionDetach_ODF);
+        portContextMenu.addAction(ui->actionConvert_to_Duplex);
+        portContextMenu.addAction(ui->actionConvert_to_BiDi);
         portContextMenu.addSeparator();
         portContextMenu.addAction(ui->actionReservePortToCommercialDep);
         portContextMenu.addSeparator();
@@ -689,6 +696,25 @@ void MainPanel::portContextMenuSlot(QPoint ptr)
                 ui->actionChange_ODF->setEnabled(true);
                 ui->actionAssign_ODF->setEnabled(false);
                 ui->actionDetach_ODF->setEnabled(true);
+
+                //bidi-duplex
+                int duplex = dbMan->pinDuplexStatus(clickedPinId);
+                if(duplex == 1)
+                {
+                    ui->actionConvert_to_Duplex->setEnabled(false);
+                    ui->actionConvert_to_BiDi->setEnabled(true);
+                }
+                else if(duplex == 0)
+                {
+                    ui->actionConvert_to_Duplex->setEnabled(true);
+                    ui->actionConvert_to_BiDi->setEnabled(false);
+                }
+                else
+                {
+                    ui->actionConvert_to_Duplex->setEnabled(false);
+                    ui->actionConvert_to_BiDi->setEnabled(false);
+                }
+
             }
             else
             {
@@ -696,6 +722,8 @@ void MainPanel::portContextMenuSlot(QPoint ptr)
                 ui->actionChange_ODF->setEnabled(false);
                 ui->actionAssign_ODF->setEnabled(true);
                 ui->actionDetach_ODF->setEnabled(false);
+                ui->actionConvert_to_Duplex->setEnabled(false);
+                ui->actionConvert_to_BiDi->setEnabled(false);
             }
         }
 
@@ -730,6 +758,8 @@ void MainPanel::portContextMenuSlot(QPoint ptr)
         ui->actionAssign_ODF->setEnabled(false);
         ui->actionDetach_ODF->setEnabled(false);
     }
+
+
 
     portContextMenu.popup(ui->portTV->mapToGlobal(ptr));
 
@@ -1566,5 +1596,32 @@ void MainPanel::on_actionUnlik_Batch_ODF_triggered()
 
 void MainPanel::on_actionSystemNo_triggered()
 {
+
+}
+
+
+// duplex bidi
+
+void MainPanel::on_actionConvert_to_Duplex_triggered()
+{
+
+}
+void MainPanel::on_actionConvert_to_BiDi_triggered()
+{
+    QMap<int, QString> opp = dbMan->getOdfPosPin(clickedPinId);
+    QString odf="", pos="", pin="";
+    if(opp.size() == 3)
+    {
+        pin = opp[1];
+        pos = opp[2];
+        odf = opp[3];
+    }
+
+    QString exch = QString::number(clickedAreaNo)+"-"+clickedAbbr;
+    ConvertToBiDi *convertToBiDi = new ConvertToBiDi(this, dbMan,clickedPinId, exch , clickedSaloon,odf, pos, pin );
+    convertToBiDi->setAttribute(Qt::WA_DeleteOnClose);
+    connect(convertToBiDi,SIGNAL(finished(int)), this,SLOT(refreshSlot(int)));
+    convertToBiDi->show();
+
 
 }
