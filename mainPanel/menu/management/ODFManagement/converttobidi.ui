@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>500</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>600</width>
-    <height>500</height>
+    <height>600</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>600</width>
-    <height>500</height>
+    <height>600</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -259,6 +259,174 @@
         </item>
        </layout>
       </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_11">
+        <item>
+         <widget class="QLabel" name="label_12">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Tahoma</family>
+            <pointsize>10</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 127);</string>
+          </property>
+          <property name="text">
+           <string>ODF:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="odfLbl">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Tahoma</family>
+            <pointsize>10</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(85, 0, 127);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_13">
+        <item>
+         <widget class="QLabel" name="label_13">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Tahoma</family>
+            <pointsize>10</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 127);</string>
+          </property>
+          <property name="text">
+           <string>POS:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="posLbl">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Tahoma</family>
+            <pointsize>10</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(85, 0, 127);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
      </layout>
     </widget>
    </item>
@@ -272,7 +440,7 @@
       </font>
      </property>
      <property name="title">
-      <string>Current Duplex Link</string>
+      <string>Current Duplex PINs</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
@@ -302,12 +470,12 @@
            <string notr="true">color: rgb(0, 0, 127);</string>
           </property>
           <property name="text">
-           <string>ODF:</string>
+           <string>PINs:</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="odfLbl">
+         <widget class="QLabel" name="pinLbl">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -328,13 +496,13 @@
           </property>
           <property name="font">
            <font>
-            <family>Tahoma</family>
-            <pointsize>10</pointsize>
+            <family>Ubuntu</family>
+            <pointsize>12</pointsize>
             <bold>true</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(85, 0, 127);</string>
+           <string notr="true">color: rgb(165, 29, 45);</string>
           </property>
           <property name="text">
            <string/>
@@ -413,6 +581,9 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(165, 29, 45);</string>
+     </property>
      <property name="title">
       <string>New BiDi PINs</string>
      </property>
@@ -427,13 +598,13 @@
              <widget class="QLabel" name="label_10">
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>80</width>
                 <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>100</width>
+                <width>80</width>
                 <height>30</height>
                </size>
               </property>
@@ -445,48 +616,36 @@
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(0, 0, 127);</string>
+               <string notr="true">color: rgb(165, 29, 45);</string>
               </property>
               <property name="text">
-               <string>ODF1:</string>
+               <string>PIN1:</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="odfLbl_1">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
+             <widget class="QLineEdit" name="pin1LE">
               <property name="minimumSize">
                <size>
-                <width>200</width>
+                <width>80</width>
                 <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>200</width>
+                <width>80</width>
                 <height>30</height>
                </size>
               </property>
               <property name="font">
                <font>
-                <family>Tahoma</family>
-                <pointsize>10</pointsize>
+                <family>Ubuntu</family>
+                <pointsize>12</pointsize>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(85, 0, 127);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -515,13 +674,13 @@
              <widget class="QLabel" name="label_11">
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>80</width>
                 <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>100</width>
+                <width>80</width>
                 <height>30</height>
                </size>
               </property>
@@ -533,48 +692,36 @@
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(0, 0, 127);</string>
+               <string notr="true">color: rgb(165, 29, 45);</string>
               </property>
               <property name="text">
-               <string>ODF2:</string>
+               <string>PIN2:</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="odfLbl_2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
+             <widget class="QLineEdit" name="pin2LE">
               <property name="minimumSize">
                <size>
-                <width>200</width>
+                <width>80</width>
                 <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>200</width>
+                <width>80</width>
                 <height>30</height>
                </size>
               </property>
               <property name="font">
                <font>
-                <family>Tahoma</family>
-                <pointsize>10</pointsize>
+                <family>Ubuntu</family>
+                <pointsize>12</pointsize>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(85, 0, 127);</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>

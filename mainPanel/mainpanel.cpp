@@ -1604,6 +1604,20 @@ void MainPanel::on_actionSystemNo_triggered()
 
 void MainPanel::on_actionConvert_to_Duplex_triggered()
 {
+    QMap<int, QString> opp = dbMan->getOdfPosPin(clickedPinId);
+    QString odf="", pos="", pin="";
+    if(opp.size() == 3)
+    {
+        pin = opp[1];
+        pos = opp[2];
+        odf = opp[3];
+    }
+
+    QString exch = QString::number(clickedAreaNo)+"-"+clickedAbbr;
+    ConvertToDuplex *convertToDuplex = new ConvertToDuplex(this, dbMan,clickedPinId, exch , clickedSaloon,odf, pos, pin );
+    convertToDuplex->setAttribute(Qt::WA_DeleteOnClose);
+    connect(convertToDuplex,SIGNAL(finished(int)), this,SLOT(refreshSlot(int)));
+    convertToDuplex->show();
 
 }
 void MainPanel::on_actionConvert_to_BiDi_triggered()

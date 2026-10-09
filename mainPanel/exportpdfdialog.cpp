@@ -81,14 +81,13 @@ ExportPdfDialog::ExportPdfDialog(QWidget *parent, DanetDbMan *db, const QList<in
             condition += ", "+QString::number(posIds.at(i));
         }
     }
-    condition += ");";
+    condition += ")";
 
     query = dbMan->selectViewOdfPosPin(condition);
     //`odf_id`, `pos_id`, `pin_id`, `exchange_id`, `saloon_no`, `area`, `exchange`, `abbr`, `saloon_name`, `pin_per_pos`,
     //`odf_no`, `pos_no`, `local_device`, `local_label`, `pin_no`, `remote`, `remote_label`
 
     odfModel->setQuery(*query);
-
 
     int row = intModel->rowCount();
     if(row > 500)
@@ -105,8 +104,8 @@ ExportPdfDialog::ExportPdfDialog(QWidget *parent, DanetDbMan *db, const QList<in
         ui->okBtn->setEnabled(true);
     }
 
-    odfExport = false;
-    ui->odfChB->setChecked(false);
+    odfExport = true;
+    ui->odfChB->setChecked(true);
 }
 
 ExportPdfDialog::~ExportPdfDialog()

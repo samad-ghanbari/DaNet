@@ -40,7 +40,8 @@
     <widget class="QToolBox" name="toolBox">
      <property name="font">
       <font>
-       <weight>75</weight>
+       <family>Ubuntu Sans</family>
+       <pointsize>11</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -48,7 +49,7 @@
       <string notr="true">color: rgb(4, 127, 135);</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="geometry">
@@ -56,7 +57,7 @@
         <x>0</x>
         <y>0</y>
         <width>732</width>
-        <height>353</height>
+        <height>349</height>
        </rect>
       </property>
       <attribute name="label">
@@ -91,7 +92,6 @@
           <font>
            <family>Tahoma</family>
            <pointsize>10</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -100,6 +100,9 @@
          </property>
          <property name="text">
           <string>Include Corresponding ODF</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -111,7 +114,7 @@
         <x>0</x>
         <y>0</y>
         <width>732</width>
-        <height>353</height>
+        <height>349</height>
        </rect>
       </property>
       <attribute name="label">
@@ -134,7 +137,6 @@
          </property>
          <property name="font">
           <font>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -181,7 +183,6 @@
       <font>
        <family>Tahoma</family>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -201,7 +202,6 @@
         <font>
          <family>Tahoma</family>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -210,6 +210,9 @@
        </property>
        <property name="text">
         <string>Confirm</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -256,7 +259,6 @@
         <font>
          <family>Tahoma</family>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -292,7 +294,6 @@
         <font>
          <family>Tahoma</family>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>

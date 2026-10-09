@@ -14,17 +14,15 @@ ConvertToBiDi::ConvertToBiDi(QWidget *parent, DanetDbMan *db, const int PinId, c
     ui->okBtn->setEnabled(false);
     ui->abbrLbl->setText(exch);
     ui->saloonLbl->setText(saloon);
-    QString currentDuplex = odf+" _ "+pos+" _ "+pinNo;
-    ui->odfLbl->setText(currentDuplex);
+    ui->odfLbl->setText(odf);
+    ui->posLbl->setText(pos);
+    ui->pinLbl->setText(pinNo);
 
     QList<QString> list = dbMan->splitPIN(pinNo);
     if(list.size() == 2)
     {
-        QString odf1 = odf+" _ "+pos+" _ "+list[0];
-        QString odf2 = odf+" _ "+pos+" _ "+list[1];
-
-        ui->odfLbl_1->setText(odf1);
-        ui->odfLbl_2->setText(odf2);
+        ui->pin1LE->setText(list[0]);
+        ui->pin2LE->setText(list[1]);
     }
 
 
@@ -52,13 +50,23 @@ void ConvertToBiDi::on_confirmChB_toggled(bool checked)
 
 void ConvertToBiDi::on_okBtn_clicked()
 {
-    if(dbMan->convertToBiDi(pinId))
+    QString pin1LE = ui->pin1LE->text().trimmed();
+    QString pin2LE = ui->pin2LE->text().trimmed();
+
+    if(pin1LE.isEmpty() || pin2LE.isEmpty())
     {
-        this->close();
+        QMessageBox::warning(this,"ERROR", "New PINs cannot be empty");
     }
     else
     {
-        QMessageBox::warning(this,"ERROR", "Cannot Convert to BiDi PINs.\n");
+        if(dbMan->convertToBiDi(pinId, pin1LE, pin2LE))
+        {
+            this->close();
+        }
+        else
+        {
+            QMessageBox::warning(this,"ERROR", "Cannot Convert to BiDi PINs.\n");
+        }
     }
 }
 

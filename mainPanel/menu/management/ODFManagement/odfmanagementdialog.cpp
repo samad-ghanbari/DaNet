@@ -727,7 +727,6 @@ void ODFManagementDialog::on_actionConvert_To_BiDi_triggered()
 
 }
 
-
 void ODFManagementDialog::on_actionConvert_To_Duplex_triggered()
 {
     if(clickedDuplex.compare("bidi", Qt::CaseInsensitive) == 0)

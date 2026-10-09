@@ -22,10 +22,13 @@ private slots:
 
     void on_okBtn_clicked();
 
+    void on_cancelBtn_clicked();
+
 private:
     Ui::ConvertToDuplex *ui;
     DanetDbMan *dbMan;
     const int pinId;
+    int peerPinId;
 };
 
 #endif // CONVERTTODUPLEX_H
